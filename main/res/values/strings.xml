@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SounD CHK</string>
+    <string name="tester_text">Tester Text</string>
+    <string name="text_home">Home Fragment</string>
+    <string name="text_favorites">Favorites Fragment</string>
+    <string name="text_camera">Camera Fragment</string>
+    <string name="text_feed">Feed Fragment</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_camera">QR Code Reader</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="menu_favorites">Favorites</string>
+    <string name="test_text_true">feed is true</string>
+    <string name="test_text_false">feed is false</string>
+    <string name="text_read_QR">Reading QR Code...</string>
+</resources>
