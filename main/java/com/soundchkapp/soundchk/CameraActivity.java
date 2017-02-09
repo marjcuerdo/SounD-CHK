@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
+import android.net.Uri;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -26,12 +27,13 @@ public class CameraActivity extends AppCompatActivity {
         integrator.setBeepEnabled(false);
         integrator.setBarcodeImageEnabled(false);
         integrator.initiateScan();
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        String link;
+
         if (result != null) {
             if(result.getContents() == null) {
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
@@ -39,6 +41,10 @@ public class CameraActivity extends AppCompatActivity {
             }
             else {
                 Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+                link = result.getContents();
+                Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         }
         else {
