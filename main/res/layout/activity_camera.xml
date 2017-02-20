@@ -7,24 +7,19 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                android:background="@color/colorBlack"
+                android:background="@color/color_home"
                 tools:context="com.soundchkapp.soundchk.CameraActivity">
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QRCode Scanner"
-        android:textSize="25dp"
-        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SCAN"
+        android:background="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:id="@+id/scan_btn"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
 

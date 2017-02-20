@@ -19,10 +19,6 @@ public class MainActivityBottomBar extends AppCompatActivity {
     private BottomNavigationView mBottomNav;
     private int mSelectedItem;
 
-    public boolean feed = false;
-    public boolean camera = false;
-    public boolean favorites = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,8 +77,8 @@ public class MainActivityBottomBar extends AppCompatActivity {
                 frag = feedfrag;
                 break;
             case R.id.menu_favorites:
-                frag = MenuFragment.newInstance(getString(R.string.text_favorites),
-                        getColorFromRes(R.color.colorBlack));
+                FaveFragment favefrag = new FaveFragment();
+                frag = favefrag;
                 break;
             case R.id.menu_camera:
                 CameraFragment camfrag = new CameraFragment();

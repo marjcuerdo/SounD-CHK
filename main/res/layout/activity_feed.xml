@@ -5,84 +5,109 @@
             android:id="@+id/feedFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:context="com.soundchkapp.soundchk.MainActivityBottomBar"
-    >
+            tools:context="com.soundchkapp.soundchk.MainActivityBottomBar">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:background="@color/colorBlack">
-
+        android:background="@color/color_home">
         <Button
-            android:text="ALBUM REVIEWS"
-            android:layout_height="200dp"
-            android:layout_width="200dp"
-            android:background="@drawable/album_review_img"
+            android:text="DR. GRIFFS"
+            android:textStyle="bold"
+            android:background="@drawable/griffs"
             android:scaleType="fitXY"
-            android:layout_alignParentLeft="true"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/colorWhite"
             android:visibility="visible"
             android:id="@+id/button"
             android:elevation="0dp"
+            android:layout_margin="1.25dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_height="200dp"
+            android:layout_width="200dp"
+            android:layout_alignParentLeft="true"
             />
 
         <Button
-            android:text="ALBUM REVIEWS 2"
+            android:text="THE LITTLE BOX"
+            android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="200dp"
-            android:background="@drawable/album_review_img"
+            android:background="@drawable/littlebox"
             android:scaleType="fitCenter"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/colorWhite"
             android:visibility="visible"
-
-
+            android:layout_marginLeft="0dp"
+            android:layout_margin="1.25dp"
+            android:layout_marginBottom="0dp"
             android:layout_toRightOf="@id/button"
             android:layout_alignParentRight="true"
             android:id="@+id/button2" />
 
         <Button
-            android:text="3"
+            android:text="CONCERT REVIEWS"
+            android:textStyle="bold"
+            android:background = '@drawable/pinegrove'
             android:layout_height="150dp"
             android:layout_width="match_parent"
             android:layout_below="@id/button"
-            android:id="@+id/button3" />
+            android:id="@+id/button3"
+            android:layout_margin="1.25dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:visibility="visible"
+            android:textColor="@color/colorWhite"/>
+
 
         <Button
-            android:text="4"
+            android:text="ROB LAVAQUE"
+            android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="125dp"
             android:layout_below="@id/button3"
             android:layout_alignParentLeft="true"
-            android:id="@+id/button4" />
+            android:background="@drawable/lavaque"
+            android:id="@+id/button4"
+            android:layout_marginTop="0dp"
+            android:layout_margin="1.25dp"
+            android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorWhite"/>
 
         <Button
-            android:text="5"
+            android:text="EVENTS"
+            android:textStyle="bold"
+            android:background="@drawable/bugjar"
             android:layout_height="200dp"
             android:layout_width="125dp"
             android:layout_toRightOf="@id/button4"
             android:layout_below="@id/button3"
-            android:id="@+id/button5" />
+            android:id="@+id/button5"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_margin="1.25dp"
+            android:visibility="visible"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/colorWhite" />
 
         <Button
-            android:text="6"
+            android:text="ALBUM REVIEWS"
+            android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="125dp"
             android:layout_below="@id/button3"
             android:layout_toRightOf="@id/button5"
             android:layout_alignParentRight="true"
+            android:background='@drawable/delp3'
+            android:scaleType="fitCenter"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:visibility="visible"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_margin="1.25dp"
+            android:textColor="@color/colorWhite"
             android:id="@+id/button6" />
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            design:menu="@menu/menu" />
 
     </RelativeLayout>
 </ScrollView>
-
-
-
