@@ -13,10 +13,15 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SCAN"
+        android:text="@string/text_scan_qr_code"
+        android:textAllCaps="false"
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
         android:background="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:textSize="25sp"
+        android:textStyle="normal"
         android:id="@+id/scan_btn"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />

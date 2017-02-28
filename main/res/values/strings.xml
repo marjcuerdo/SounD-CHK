@@ -107,6 +107,15 @@
     <string name="title_activity_story_page_activity">StoryPageAcitivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="dr_griffs_title_text">Doctr Griffs aka Aleem Griffiths</string>
-    <string name="read_more_text">Read more.</string>
+    <string name="dr_griffs_title_text">Doctr Griffs</string>
+    <string name="read_more_text">read more</string>
+    <string name="text_dr_griffs">Doctr Griffs</string>
+    <string name="text_the_little_box">The Little Box</string>
+    <string name="text_concert_reviews">Concert Reviews</string>
+    <string name="text_rob_lavaque">Rob Lavaque</string>
+    <string name="text_events">Events</string>
+    <string name="text_album_reviews">Album Reviews</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="text_scan_qr_code">Scan QR Code</string>
 </resources>

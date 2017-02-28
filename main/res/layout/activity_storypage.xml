@@ -1,0 +1,66 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            tools:context="com.soundchkapp.soundchk.StoryPageActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="10"
+            android:orientation="vertical"
+            android:background="@color/colorBlack"
+            android:paddingTop="60dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7.5"
+                android:background="@drawable/griffs_full"
+                android:alpha="0.9"
+                android:gravity="center"
+                android:text="@string/dr_griffs_title_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:shadowColor="@color/colorBlack"
+                android:shadowRadius="2"
+                android:shadowDx="10"
+                android:shadowDy="10"
+                android:id="@+id/textView"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:paddingTop="30dp"
+                android:paddingBottom="30dp"
+                android:text="@string/read_more_text"
+                android:textColor="@color/colorWhite"
+                android:textStyle="normal"
+                android:textAllCaps="false"
+                android:textSize="25sp"
+                android:background="@color/colorBlack"
+                android:alpha="0.85"
+                android:id="@+id/button7"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGreen"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:padding="25dp"
+            android:text="@string/large_text"/>
+
+    </LinearLayout>
+</ScrollView>
+

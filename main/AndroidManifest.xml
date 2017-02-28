@@ -15,13 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CameraActivity"/>
-
+        <activity android:name=".CameraActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".StoryPageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_story_page_activity"
-            android:theme="@style/FullscreenTheme">
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
     </application>
 

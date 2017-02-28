@@ -12,7 +12,7 @@
         android:layout_centerVertical="true"
         android:background="@color/color_home">
         <Button
-            android:text="DR. GRIFFS"
+            android:text="@string/text_dr_griffs"
             android:textStyle="bold"
             android:background="@drawable/griffs"
             android:scaleType="fitXY"
@@ -26,11 +26,11 @@
             android:layout_marginBottom="0dp"
             android:layout_height="200dp"
             android:layout_width="200dp"
-            android:layout_alignParentLeft="true"
-            />
+            android:layout_alignParentLeft="true">
+        </Button>
 
         <Button
-            android:text="THE LITTLE BOX"
+            android:text="@string/text_the_little_box"
             android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="200dp"
@@ -47,7 +47,7 @@
             android:id="@+id/button2" />
 
         <Button
-            android:text="CONCERT REVIEWS"
+            android:text="@string/text_concert_reviews"
             android:textStyle="bold"
             android:background = '@drawable/pinegrove'
             android:layout_height="150dp"
@@ -61,7 +61,7 @@
 
 
         <Button
-            android:text="ROB LAVAQUE"
+            android:text="@string/text_rob_lavaque"
             android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="125dp"
@@ -76,7 +76,7 @@
             android:textColor="@color/colorWhite"/>
 
         <Button
-            android:text="EVENTS"
+            android:text="@string/text_events"
             android:textStyle="bold"
             android:background="@drawable/bugjar"
             android:layout_height="200dp"
@@ -92,7 +92,7 @@
             android:textColor="@color/colorWhite" />
 
         <Button
-            android:text="ALBUM REVIEWS"
+            android:text="@string/text_album_reviews"
             android:textStyle="bold"
             android:layout_height="200dp"
             android:layout_width="125dp"
@@ -110,4 +110,5 @@
             android:id="@+id/button6" />
 
     </RelativeLayout>
+
 </ScrollView>

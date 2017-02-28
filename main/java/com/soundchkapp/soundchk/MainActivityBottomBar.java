@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.util.Log;
 
 public class MainActivityBottomBar extends AppCompatActivity {
 
@@ -31,7 +32,10 @@ public class MainActivityBottomBar extends AppCompatActivity {
 
         */
 
+
+
         mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
+
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -45,7 +49,7 @@ public class MainActivityBottomBar extends AppCompatActivity {
             mSelectedItem = savedInstanceState.getInt(SELECTED_ITEM, 0);
             selectedItem = mBottomNav.getMenu().findItem(mSelectedItem);
         } else {
-            selectedItem = mBottomNav.getMenu().getItem(0);
+            selectedItem = mBottomNav.getMenu().getItem(1);
         }
         selectFragment(selectedItem);
     }
