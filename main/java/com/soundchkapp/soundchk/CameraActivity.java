@@ -36,29 +36,30 @@ public class CameraActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         String link;
 
-        //File localFile = File.createTempFile("images", "jpg");
-
         if (result != null) {
             if(result.getContents() == null) {
                 Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
                 finish();
             }
             else {
-                Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
+                Intent intent;
+                //Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
                 link = result.getContents();
-                Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
+                //Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
                 Log.d("TAG", link.toString());
 
-                if (Objects.equals(link.toString(), "http://www.qrstuff.com/")) {
-                    Intent intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                    startActivity(intent);
-                } else {
-                    Log.d("TAG", "QR wrong");
-                    Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                    startActivity(intent);
+                switch (link.toString()) {
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "griffs");
+                        intent.putExtra("locked", "griffs");
+                        startActivity(intent);
+                        break;
+
+                    //Log.d("TAG", "QR wrong");
+                    // intent = new Intent(Intent.ACTION_VIEW, uri);
+
                 }
-
-
 
             }
         }

@@ -26,8 +26,6 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         Button button5 = (Button) v.findViewById(R.id.button5);
         Button button6 = (Button) v.findViewById(R.id.button6);
 
-
-
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
         button3.setOnClickListener(this);
@@ -42,32 +40,32 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.button:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "griffs");
+                intent.putExtra("unlocked", "griffs");
                 startActivity(intent);
                 break;
             case R.id.button2:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "little");
+                intent.putExtra("unlocked", "little");
                 startActivity(intent);
                 break;
             case R.id.button3:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "concert");
+                intent.putExtra("unlocked", "concert");
                 startActivity(intent);
                 break;
             case R.id.button4:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "lavaque");
+                intent.putExtra("unlocked", "lavaque");
                 startActivity(intent);
                 break;
             case R.id.button5:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "events");
+                intent.putExtra("unlocked", "events");
                 startActivity(intent);
                 break;
             case R.id.button6:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
-                intent.putExtra("message", "album");
+                intent.putExtra("unlocked", "album");
                 startActivity(intent);
                 break;
         }
