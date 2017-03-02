@@ -25,15 +25,6 @@ public class MainActivityBottomBar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_bottom_bar);
 
-        /*
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle(null);
-
-        */
-
-
-
         mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
 
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

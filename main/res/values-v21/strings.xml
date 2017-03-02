@@ -8,5 +8,5 @@
     <string name="text_rob_lavaque">Rob Lavaque</string>
     <string name="text_events">Events</string>
     <string name="text_album_reviews">Album Reviews</string>
-    <string name="text_scan_qr_code">Scan QR Code</string>
+    <string name="text_scan_qr_code">Scan</string>
 </resources>

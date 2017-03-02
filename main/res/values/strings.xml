@@ -13,12 +13,14 @@
     <string name="test_text_false">feed is false</string>
     <string name="text_read_QR">Reading QR Code...</string>
     <string name="title_activity_story_page">StoryPageActivity</string>
-    <string name="large_text">
+    <string name="short_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
+        "technologically advanced and open to imagination and magic.\n"</string>
+    <string name="large_text">
+        "...\n\n"
         "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
         "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
         "flexibility of the material creates new affordances that supercede those in the physical "
@@ -115,7 +117,11 @@
     <string name="text_rob_lavaque">Rob Lavaque</string>
     <string name="text_events">Events</string>
     <string name="text_album_reviews">Album Reviews</string>
+    <string name="text_juicy_title_text">Juicy Connotations</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="text_scan_qr_code">Scan QR Code</string>
+    <string name="text_scan_qr_code">Scan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

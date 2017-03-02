@@ -4,15 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.Button;
 import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import android.net.Uri;
 import android.util.Log;
-
-import java.util.Objects;
-
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -38,35 +34,59 @@ public class CameraActivity extends AppCompatActivity {
 
         if (result != null) {
             if(result.getContents() == null) {
-                Toast.makeText(this, "You cancelled the scanning", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "You cancelled the scanning.", Toast.LENGTH_LONG).show();
                 finish();
             }
             else {
                 Intent intent;
-                //Toast.makeText(this, result.getContents(),Toast.LENGTH_LONG).show();
                 link = result.getContents();
-                //Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
-                Log.d("TAG", link.toString());
 
                 switch (link.toString()) {
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee":
+
+                    // QR code: Intro Video
+                    case "https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be":
+                        Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
+                        intent = new Intent(Intent.ACTION_VIEW, uri);
+                        finish();
+                        startActivity(intent);
+
+                        break;
+
+                    // QR code: Dr. Griffs Story Page
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "griffs");
                         intent.putExtra("locked", "griffs");
+                        finish();
                         startActivity(intent);
                         break;
 
-                    //Log.d("TAG", "QR wrong");
-                    // intent = new Intent(Intent.ACTION_VIEW, uri);
+                    // QR code: Juicy Connotation Story Page
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "juicy");
+                        intent.putExtra("locked", "juicy");
+                        finish();
+                        startActivity(intent);
+                        break;
+
+                    // QR code: Lavaque Story Page
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "lavaque");
+                        intent.putExtra("locked", "lavaque");
+                        finish();
+                        startActivity(intent);
+                        break;
+
+
 
                 }
-
             }
         }
         else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-
 }
 

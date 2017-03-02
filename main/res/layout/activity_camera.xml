@@ -10,27 +10,48 @@
                 android:background="@color/color_home"
                 tools:context="com.soundchkapp.soundchk.CameraActivity">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fireImage"/>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_scan_qr_code"
-        android:textAllCaps="false"
+        android:textColor="@color/color_home_dark"
+        android:textAllCaps="true"
         android:paddingBottom="50dp"
         android:paddingTop="50dp"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:background="@color/colorWhite"
-        android:textSize="25sp"
-        android:textStyle="normal"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:background="@drawable/roundedbutton"
+        android:textSize="35sp"
+        android:textStyle="bold"
         android:id="@+id/scan_btn"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_centerVertical="true"
+        android:shadowRadius="1"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowColor="@color/colorBlack"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_instructions"
+        android:layout_below="@id/scan_btn"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Tap ABOVE to scan a QR Code.\nWhat's SounD CHK? Tap BELOW to find out. "/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scan_instructions"
+        android:id="@+id/button_qr_code_example"
+        android:scaleType="fitCenter"
+        android:background="@color/colorWhite"
+        android:src="@drawable/qr_introvid"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.875"/>
 
 </RelativeLayout>
 

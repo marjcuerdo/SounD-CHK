@@ -24,8 +24,6 @@ public class MenuFragment extends Fragment {
     private View mContent;
     private TextView mTextView;
 
-    MainActivityBottomBar bottomObj;
-
     public static Fragment newInstance(String text, int color) {
         Fragment frag = new MenuFragment();
         Bundle args = new Bundle();
@@ -35,15 +33,9 @@ public class MenuFragment extends Fragment {
         return frag;
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //if (bottomObj.feed == true) {
-        //    Log.d("TRUE", "feed is true");
-        //    return inflater.inflate(R.layout.activity_feed, container, false);
-        //} else
             return inflater.inflate(R.layout.fragment_menu, container, false);
     }
 

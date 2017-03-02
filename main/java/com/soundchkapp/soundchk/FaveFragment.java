@@ -14,11 +14,9 @@ import android.view.ViewGroup;
 public class FaveFragment extends Fragment implements View.OnClickListener {
 
     @Nullable
-    //@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_favorites, container, false);
-        //Button button1 = (Button) v.findViewById(R.id.button);
-        //button1.setOnClickListener(this);
+
         return v;
     }
 
