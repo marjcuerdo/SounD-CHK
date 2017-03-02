@@ -1,9 +1,13 @@
 package com.soundchkapp.soundchk;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -24,9 +28,15 @@ public class StoryPageActivity extends AppCompatActivity {
         TextView lockedtext = (TextView) findViewById(R.id.lockedtext);
         TextView story_locked = (TextView) findViewById(R.id.story_locked);
         LinearLayout locked_holder = (LinearLayout) findViewById(R.id.locked_holder);
+        LinearLayout locked_holder2 = (LinearLayout) findViewById(R.id.extra_locked_holder);
         final ImageButton iv1 = (ImageButton) findViewById(R.id.imglocked1);
         final ImageButton iv2 = (ImageButton) findViewById(R.id.imglocked2);
         final ImageButton iv3 = (ImageButton) findViewById(R.id.imglocked3);
+        final ImageButton iv4 = (ImageButton) findViewById(R.id.imglocked4);
+        final ImageButton iv5 = (ImageButton) findViewById(R.id.imglocked5);
+        final ImageButton iv6 = (ImageButton) findViewById(R.id.imglocked6);
+
+        // unlocked with QR; same access as open from feed button
 
         switch (getIntent().getStringExtra("unlocked")) {
 
@@ -47,6 +57,8 @@ public class StoryPageActivity extends AppCompatActivity {
                     Glide.with(this.getApplicationContext())
                             .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266")
                             .into(iv3);
+
+                    locked_holder2.setVisibility(View.VISIBLE);
                 }
                 break;
 
@@ -111,12 +123,16 @@ public class StoryPageActivity extends AppCompatActivity {
 
         }
 
+        // increased access to content by QR code
+
         if (getIntent().getStringExtra("locked") != null) {
             switch (getIntent().getStringExtra("locked")) {
                 case "griffs":
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder2.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder2.setVisibility(View.VISIBLE);
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
@@ -159,6 +175,37 @@ public class StoryPageActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     });
+
+                    iv4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing"));
+                            startActivity(intent);
+
+                        }
+                    });
+
+                    iv5.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing"));
+                            startActivity(intent);
+
+                        }
+                    });
+
+                    iv6.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing"));
+                            startActivity(intent);
+
+                        }
+                    });
+
 
                     break;
 

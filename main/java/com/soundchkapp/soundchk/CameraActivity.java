@@ -8,7 +8,8 @@ import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 import android.net.Uri;
-import android.util.Log;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 public class CameraActivity extends AppCompatActivity {
 
@@ -59,6 +60,12 @@ public class CameraActivity extends AppCompatActivity {
                         intent.putExtra("locked", "griffs");
                         finish();
                         startActivity(intent);
+
+                        SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor = preferences1.edit();
+                        editor.putString("storemedia_griff","griff");
+                        editor.apply();
+
                         break;
 
                     // QR code: Juicy Connotation Story Page
@@ -77,6 +84,12 @@ public class CameraActivity extends AppCompatActivity {
                         intent.putExtra("locked", "lavaque");
                         finish();
                         startActivity(intent);
+
+                        SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor2 = preferences2.edit();
+                        editor2.putString("storemedia_lavaque","lavaque");
+                        editor2.apply();
+
                         break;
 
 

@@ -3,7 +3,6 @@ package com.soundchkapp.soundchk;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
