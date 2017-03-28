@@ -13,7 +13,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/toolbar_soundchk"
+        android:background="@drawable/header"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
@@ -32,6 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:titleTextColor="@color/colorBlack"
+            design:itemTextColor="@color/colorWhite"
+            design:itemIconTint="@color/colorWhite"
+            android:background="@color/colorGrey"
             design:menu="@menu/menu" />
 
 

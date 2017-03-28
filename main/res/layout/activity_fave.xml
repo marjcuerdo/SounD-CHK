@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:scrollbarThumbVertical="@drawable/scrollbar"
-            xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:id="@+id/container_parent"
+              android:orientation="vertical"
+              android:background="@color/color_home_dark"
+              xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:scrollbarThumbVertical="@drawable/scrollbar">
 
-<LinearLayout
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/container_faves"
-    android:background="@color/color_home_dark"
-              xmlns:android="http://schemas.android.com/apk/res/android"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/container_faves"
+                  xmlns:android="http://schemas.android.com/apk/res/android"/>
 
-</ScrollView>
+    </ScrollView>
+</LinearLayout>

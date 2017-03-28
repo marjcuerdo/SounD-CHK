@@ -1,5 +1,6 @@
 package com.soundchkapp.soundchk;
 
+import android.content.res.ColorStateList;
 import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -33,6 +34,8 @@ public class MainActivityBottomBar extends AppCompatActivity {
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                //mBottomNav.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+               // mBottomNav.setItemTextColor((ColorStateList)getResources().getColor(R.color.colorWhite));
                 selectFragment(item);
                 return true;
             }
@@ -98,6 +101,7 @@ public class MainActivityBottomBar extends AppCompatActivity {
         for (int i = 0; i< mBottomNav.getMenu().size(); i++) {
             MenuItem menuItem = mBottomNav.getMenu().getItem(i);
             menuItem.setChecked(menuItem.getItemId() == item.getItemId());
+
         }
 
         updateToolbarText(item.getTitle());

@@ -29,6 +29,7 @@ public class FaveActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences1.edit();
 
         LinearLayout container_faves = (LinearLayout) findViewById(R.id.container_faves);
+        LinearLayout container_parent = (LinearLayout) findViewById(R.id.container_parent);
         //ImageButton btnGreen = new ImageButton(this);
 
             switch (getIntent().getStringExtra("fave")) {
@@ -49,7 +50,7 @@ public class FaveActivity extends AppCompatActivity {
                         addSavedVid(container_faves, "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing");
                     }
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_faves);
+                        emptyMessage(container_parent);
                     }
                     break;
                 case "images":
@@ -82,12 +83,12 @@ public class FaveActivity extends AppCompatActivity {
                         addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a");
                     }
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_faves);
+                        emptyMessage(container_parent);
                     }
                     break;
                 case "audio":
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_faves);
+                        emptyMessage(container_parent);
                     }
                     break;
             }
@@ -110,6 +111,7 @@ public class FaveActivity extends AppCompatActivity {
     public void addSavedVid(LinearLayout linearLayout, final String url) {
         ImageButton btn = new ImageButton(this);
 
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -130,7 +132,6 @@ public class FaveActivity extends AppCompatActivity {
         tv.setTextSize(35);
         tv.setTypeface(null, Typeface.BOLD);
         tv.setGravity(Gravity.CENTER);
-        linearLayout.setMinimumHeight(LinearLayout.LayoutParams.MATCH_PARENT);
         linearLayout.addView(tv);
     }
 
