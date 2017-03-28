@@ -47,7 +47,6 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Intro Video
                     case "https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be":
-
                         Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
                         intent = new Intent(Intent.ACTION_VIEW, uri);
                         finish();
@@ -58,7 +57,6 @@ public class CameraActivity extends AppCompatActivity {
                     // QR code: Dr. Griffs Story Page
                     case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
                     //case "market://detailsintroVID":
-
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "griffs");
                         intent.putExtra("locked", "griffs");
@@ -79,7 +77,6 @@ public class CameraActivity extends AppCompatActivity {
                         intent.putExtra("locked", "juicy");
                         finish();
                         startActivity(intent);
-
                         SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor2 = preferences2.edit();
                         editor2.putString("storemedia_juicy","juicy");

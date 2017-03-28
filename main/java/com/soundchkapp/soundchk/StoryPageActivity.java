@@ -16,7 +16,6 @@ import android.media.MediaPlayer;
 import android.widget.Toast;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-
 import java.util.Objects;
 
 public class StoryPageActivity extends AppCompatActivity {
@@ -48,7 +47,6 @@ public class StoryPageActivity extends AppCompatActivity {
         String url2 = "";
         String url3 = "";
         String url4 = "";
-
 
         // unlocked with QR; same access as open from feed button
 
@@ -286,6 +284,7 @@ public class StoryPageActivity extends AppCompatActivity {
                         public void onClick(View view) {
                             intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
                             intent.putExtra("fullimg", "lavaque1");
+
                             startActivity(intent);
                         }
                     });
@@ -454,7 +453,6 @@ public class StoryPageActivity extends AppCompatActivity {
             t.show();
         }
     }
-
 
     //
     public void setLockedStoryPage(TextView tv, int drawableId, int titleId, ImageButton iv1, ImageButton iv2, ImageButton iv3, String name, String url1, String url2, String url3, LinearLayout layout) {

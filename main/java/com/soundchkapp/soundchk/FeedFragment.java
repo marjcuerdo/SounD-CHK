@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.view.ViewGroup;
+import android.content.Context;
 
 /**
  * Created by marjorieanncuerdo on 11/16/16.
@@ -36,6 +38,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
         button7.setOnClickListener(this);
+      
         return v;
     }
 

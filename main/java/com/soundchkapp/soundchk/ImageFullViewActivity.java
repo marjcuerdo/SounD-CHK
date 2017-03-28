@@ -48,5 +48,6 @@ public class ImageFullViewActivity extends AppCompatActivity {
                         .into(fullImgView);
                 break;
         }
+
     }
 }
