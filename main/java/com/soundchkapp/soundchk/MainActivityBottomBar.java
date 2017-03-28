@@ -9,8 +9,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
 
 public class MainActivityBottomBar extends AppCompatActivity {
 
@@ -19,23 +21,15 @@ public class MainActivityBottomBar extends AppCompatActivity {
     private BottomNavigationView mBottomNav;
     private int mSelectedItem;
 
-    public boolean feed = false;
-    public boolean camera = false;
-    public boolean favorites = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_bottom_bar);
 
-        /*
-        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setTitle(null);
-
-        */
-
         mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
+
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -49,7 +43,7 @@ public class MainActivityBottomBar extends AppCompatActivity {
             mSelectedItem = savedInstanceState.getInt(SELECTED_ITEM, 0);
             selectedItem = mBottomNav.getMenu().findItem(mSelectedItem);
         } else {
-            selectedItem = mBottomNav.getMenu().getItem(0);
+            selectedItem = mBottomNav.getMenu().getItem(1);
         }
         selectFragment(selectedItem);
     }
@@ -58,6 +52,13 @@ public class MainActivityBottomBar extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         outState.putInt(SELECTED_ITEM, mSelectedItem);
         super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onResume() {
+        Log.d("TAG", "onresume???");
+        super.onResume();
+
     }
 
     @Override
@@ -81,8 +82,8 @@ public class MainActivityBottomBar extends AppCompatActivity {
                 frag = feedfrag;
                 break;
             case R.id.menu_favorites:
-                frag = MenuFragment.newInstance(getString(R.string.text_favorites),
-                        getColorFromRes(R.color.colorBlack));
+                FaveFragment favefrag = new FaveFragment();
+                frag = favefrag;
                 break;
             case R.id.menu_camera:
                 CameraFragment camfrag = new CameraFragment();

@@ -7,24 +7,51 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                android:background="@color/colorBlack"
+                android:background="@color/color_home"
                 tools:context="com.soundchkapp.soundchk.CameraActivity">
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="QRCode Scanner"
-        android:textSize="25dp"
-        android:layout_centerHorizontal="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SCAN"
+        android:text="@string/text_scan_qr_code"
+        android:textColor="@color/color_home_dark"
+        android:textAllCaps="true"
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:background="@drawable/roundedbutton"
+        android:textSize="35sp"
+        android:textStyle="bold"
         android:id="@+id/scan_btn"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:shadowRadius="1"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowColor="@color/colorBlack"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scan_instructions"
+        android:layout_below="@id/scan_btn"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:text="Tap ABOVE to scan a QR Code.\nTap BELOW to watch our idea video pitch."/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scan_instructions"
+        android:id="@+id/button_qr_code_example"
+        android:scaleType="fitCenter"
+        android:background="@color/colorWhite"
+        android:src="@drawable/qr_introvid"
+        android:layout_centerHorizontal="true"
+        android:alpha="0.875"/>
+
 </RelativeLayout>
 
