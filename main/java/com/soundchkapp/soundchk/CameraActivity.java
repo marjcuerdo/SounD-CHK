@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -35,7 +36,7 @@ public class CameraActivity extends AppCompatActivity {
 
         if (result != null) {
             if(result.getContents() == null) {
-                Toast.makeText(this, "You cancelled the scanning.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Cancelled", Toast.LENGTH_SHORT).show();
                 finish();
             }
             else {
@@ -55,6 +56,7 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Dr. Griffs Story Page
                     case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
+                    //case "market://detailsintroVID":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "griffs");
                         intent.putExtra("locked", "griffs");
@@ -75,6 +77,11 @@ public class CameraActivity extends AppCompatActivity {
                         intent.putExtra("locked", "juicy");
                         finish();
                         startActivity(intent);
+                        SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor2 = preferences2.edit();
+                        editor2.putString("storemedia_juicy","juicy");
+                        editor2.apply();
+
                         break;
 
                     // QR code: Lavaque Story Page
@@ -85,15 +92,45 @@ public class CameraActivity extends AppCompatActivity {
                         finish();
                         startActivity(intent);
 
-                        SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
-                        SharedPreferences.Editor editor2 = preferences2.edit();
-                        editor2.putString("storemedia_lavaque","lavaque");
-                        editor2.apply();
+                        SharedPreferences preferences3 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor3 = preferences3.edit();
+                        editor3.putString("storemedia_lavaque","lavaque");
+                        editor3.apply();
 
                         break;
 
 
+                    // QR code: Little Box Story Page
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        Log.d("TAG", "little working");
+                        intent.putExtra("unlocked", "little");
+                        intent.putExtra("locked", "little");
+                        finish();
+                        startActivity(intent);
 
+                        SharedPreferences preferences4 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor4 = preferences4.edit();
+                        editor4.putString("storemedia_little","little");
+                        editor4.apply();
+
+                        break;
+
+                    // QR code: Album Review Story Page
+                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        Log.d("TAG", "album working");
+                        intent.putExtra("unlocked", "album");
+                        intent.putExtra("locked", "album");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences5 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor5 = preferences5.edit();
+                        editor5.putString("storemedia_album","album");
+                        editor5.apply();
+
+                        break;
                 }
             }
         }

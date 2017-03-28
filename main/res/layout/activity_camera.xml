@@ -40,7 +40,7 @@
         android:paddingBottom="25dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
-        android:text="Tap ABOVE to scan a QR Code.\nWhat's SounD CHK? Tap BELOW to find out. "/>
+        android:text="Tap ABOVE to scan a QR Code.\nTap BELOW to watch our idea video pitch."/>
 
     <ImageButton
         android:layout_width="wrap_content"

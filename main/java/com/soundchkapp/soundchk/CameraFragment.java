@@ -1,6 +1,7 @@
 package com.soundchkapp.soundchk;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -35,12 +36,13 @@ public class CameraFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.activity_camera, container, false);
 
-        Button button = (Button)v.findViewById(R.id.scan_btn);
+        final Button button = (Button)v.findViewById(R.id.scan_btn);
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
+                //button.setBackgroundColor(Color.BLUE);
                 Intent intent = new Intent(getActivity(), CameraActivity.class);
                 startActivity(intent);
             }

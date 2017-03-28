@@ -9,4 +9,6 @@
     <string name="text_events">Events</string>
     <string name="text_album_reviews">Album Reviews</string>
     <string name="text_scan_qr_code">Scan</string>
+    <string name="text_no_saves">No saved media yet!</string>
+
 </resources>

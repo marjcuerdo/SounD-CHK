@@ -49,6 +49,5 @@ public class ImageFullViewActivity extends AppCompatActivity {
                 break;
         }
 
-
     }
 }

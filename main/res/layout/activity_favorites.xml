@@ -10,6 +10,7 @@
 
     <Button
         android:layout_width="0dp"
+        android:id="@+id/button_fave_vid"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/play_fave"
@@ -18,6 +19,7 @@
 
     <Button
         android:layout_width="0dp"
+        android:id="@+id/button_fave_images"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/image_fave"
@@ -28,12 +30,11 @@
 
     <Button
         android:layout_width="0dp"
+        android:id="@+id/button_fave_audio"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/sound_fave"
         android:layout_margin="3.5dp"
         />
-
-
 
 </LinearLayout>

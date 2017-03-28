@@ -29,6 +29,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         Button button4 = (Button) v.findViewById(R.id.button4);
         Button button5 = (Button) v.findViewById(R.id.button5);
         Button button6 = (Button) v.findViewById(R.id.button6);
+        Button button7 = (Button) v.findViewById(R.id.button7);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -36,17 +37,14 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         button4.setOnClickListener(this);
         button5.setOnClickListener(this);
         button6.setOnClickListener(this);
+        button7.setOnClickListener(this);
+      
         return v;
     }
 
     public void onClick(View v) {
         Intent intent;
-
-        //SharedPreferences preferences = this.getActivity().getSharedPreferences("storemedia", Context.MODE_PRIVATE);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        //String name = preferences.getString("storemedia", "");
-
 
         switch (v.getId()) {
             case R.id.button:
@@ -55,17 +53,17 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
                 String name1 = preferences.getString("storemedia_griff", "");
 
                 if (name1.equals("griff")) {
-                    Log.d("TAG", "griff work");
-                    //this.getActivity().getIntent().putExtra("locked", "griffs");
                     intent.putExtra("locked", "griffs");
-                } else {
-                    Log.d("TAG", "griff SUCK");
                 }
                 startActivity(intent);
                 break;
             case R.id.button2:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
                 intent.putExtra("unlocked", "little");
+                String name4 = preferences.getString("storemedia_little", "");
+                if (name4.equals("little")) {
+                    intent.putExtra("locked", "little");
+                }
                 startActivity(intent);
                 break;
             case R.id.button3:
@@ -78,10 +76,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
                 intent.putExtra("unlocked", "lavaque");
                 String name2 = preferences.getString("storemedia_lavaque", "");
                 if (name2.equals("lavaque")) {
-                    Log.d("TAG", "lavaque work");
                     intent.putExtra("locked", "lavaque");
-                } else {
-                    Log.d("TAG", "lavaque SUCK");
                 }
                 startActivity(intent);
                 break;
@@ -93,6 +88,19 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
             case R.id.button6:
                 intent = new Intent(getActivity(), StoryPageActivity.class);
                 intent.putExtra("unlocked", "album");
+                String name5 = preferences.getString("storemedia_album", "");
+                if (name5.equals("album")) {
+                    intent.putExtra("locked", "album");
+                }
+                startActivity(intent);
+                break;
+            case R.id.button7:
+                intent = new Intent(getActivity(), StoryPageActivity.class);
+                intent.putExtra("unlocked", "juicy");
+                String name3 = preferences.getString("storemedia_juicy", "");
+                if (name3.equals("juicy")) {
+                    intent.putExtra("locked", "juicy");
+                }
                 startActivity(intent);
                 break;
         }
