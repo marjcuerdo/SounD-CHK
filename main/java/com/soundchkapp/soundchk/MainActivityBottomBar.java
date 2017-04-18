@@ -34,8 +34,6 @@ public class MainActivityBottomBar extends AppCompatActivity {
         mBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                //mBottomNav.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-               // mBottomNav.setItemTextColor((ColorStateList)getResources().getColor(R.color.colorWhite));
                 selectFragment(item);
                 return true;
             }

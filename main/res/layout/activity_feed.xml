@@ -2,129 +2,152 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/feedFragment"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:background="@color/colorBlack"
+            android:scrollbarThumbVertical="@drawable/scrollbar_feed"
             tools:context="com.soundchkapp.soundchk.MainActivityBottomBar">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:background="@color/colorBlack">
-        <Button
-            android:text="@string/text_dr_griffs"
-            android:textStyle="bold"
-            android:background="@drawable/griffs"
-            android:scaleType="fitXY"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/color_home_dark"
-            android:visibility="visible"
-            android:id="@+id/button"
-            android:elevation="0dp"
-            android:layout_margin="1.25dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp"
-            android:layout_height="200dp"
-            android:layout_width="200dp"
-            android:layout_alignParentLeft="true">
-        </Button>
-
-        <Button
-            android:text="@string/text_the_little_box"
-            android:textStyle="bold"
-            android:layout_height="200dp"
-            android:layout_width="200dp"
-            android:background="@drawable/littlebox"
-            android:scaleType="fitCenter"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/color_home_dark"
-            android:visibility="visible"
-            android:layout_marginLeft="0dp"
-            android:layout_margin="1.25dp"
-            android:layout_marginBottom="0dp"
-            android:layout_toRightOf="@id/button"
-            android:layout_alignParentRight="true"
-            android:id="@+id/button2" />
-
-        <Button
-            android:text="@string/text_concert_reviews"
-            android:textStyle="bold"
-            android:background = '@drawable/pinegrove'
-            android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_below="@id/button"
-            android:id="@+id/button3"
-            android:layout_margin="1.25dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:visibility="visible"
-            android:textColor="@color/color_home_dark"/>
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            >
+            <Button
+                android:text="@string/text_dr_griffs"
+                android:textStyle="bold"
+                android:background="@drawable/final_button_griffs"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.6"
+                android:scaleType="fitXY"
+                android:id="@+id/button"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:textSize="25sp"/>
 
+            <Button
+                android:text="@string/text_the_little_box"
+                android:textStyle="bold"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/final_button_little"
+                android:scaleType="fitXY"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.6"
+                android:layout_marginStart="5dp"
+                android:id="@+id/button2"/>
 
-        <Button
-            android:text="@string/text_rob_lavaque"
-            android:textStyle="bold"
-            android:layout_height="200dp"
-            android:layout_width="125dp"
-            android:layout_below="@id/button3"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/lavaque"
-            android:id="@+id/button4"
-            android:layout_marginTop="0dp"
-            android:layout_margin="1.25dp"
-            android:visibility="visible"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/color_home_dark"/>
+        </LinearLayout>
 
-        <Button
-            android:text="@string/text_events"
-            android:textStyle="bold"
-            android:background="@drawable/bugjar"
-            android:layout_height="200dp"
-            android:layout_width="125dp"
-            android:layout_toRightOf="@id/button4"
-            android:layout_below="@id/button3"
-            android:id="@+id/button5"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_margin="1.25dp"
-            android:visibility="visible"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/color_home_dark" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+            <Button
+                android:text="@string/title_juicy_connotation"
+                android:textStyle="bold"
+                android:background="@drawable/final_button_juicy"
+                android:layout_height="200dp"
+                android:layout_width="match_parent"
+                android:id="@+id/button3"
+                android:textSize="25sp"
+                android:alpha="0.6"
+                android:textColor="@color/colorWhite"
+                />
+        </LinearLayout>
 
-        <Button
-            android:text="@string/text_album_reviews"
-            android:textStyle="bold"
-            android:layout_height="200dp"
-            android:layout_width="125dp"
-            android:layout_below="@id/button3"
-            android:layout_toRightOf="@id/button5"
-            android:layout_alignParentRight="true"
-            android:background='@drawable/delp3'
-            android:scaleType="fitCenter"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:visibility="visible"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_margin="1.25dp"
-            android:textColor="@color/color_home_dark"
-            android:id="@+id/button6" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:weightSum="3">
+            <Button
+                android:text="@string/del_paxton"
+                android:textStyle="bold"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/final_button_paxton"
+                android:id="@+id/button4"
+                android:alpha="0.6"
+                android:textColor="@color/colorWhite"
+                android:layout_marginEnd="10dp"/>
 
-        <Button
-            android:text="@string/text_juicy_title_text"
-            android:textStyle="bold"
-            android:layout_height="200dp"
-            android:layout_width="200dp"
-            android:layout_below="@id/button4"
-            android:layout_alignParentLeft="true"
-            android:background='@drawable/juicy_full_story'
-            android:scaleType="centerInside"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:visibility="visible"
-            android:layout_margin="1.25dp"
-            android:textColor="@color/color_home_dark"
-            android:id="@+id/button7" />
+            <Button
+                android:text="@string/title_rosehip"
+                android:textStyle="bold"
+                android:background="@drawable/final_button_rosehip"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button5"
+                android:textColor="@color/colorWhite"
+                android:shadowColor="@color/colorBlack"
+                android:layout_marginEnd="10dp"
+                android:alpha="0.6"/>
 
-    </RelativeLayout>
+            <Button
+                android:text="@string/title_wagoneer"
+                android:textStyle="bold"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background='@drawable/final_button_wagoneer'
+                android:scaleType="fitCenter"
+                android:alpha="0.6"
+                android:textColor="@color/colorWhite"
+                android:id="@+id/button6"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button7"
+                android:text="@string/title_artawake"
+                android:textStyle="bold"
+                android:background="@drawable/final_button_artawake"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.6"
+                android:scaleType="fitXY"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="5dp"
+                android:textSize="25sp"/>
+
+            <Button
+                android:text="@string/title_bugjar"
+                android:textStyle="bold"
+                android:layout_height="200dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/final_button_bugjar"
+                android:scaleType="fitXY"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:alpha="0.6"
+                android:layout_marginStart="5dp"
+                android:id="@+id/button8"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </ScrollView>

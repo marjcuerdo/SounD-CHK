@@ -1,4 +1,7 @@
 <resources>
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
     <string name="app_name">SounD CHK</string>
     <string name="tester_text">Tester Text</string>
     <string name="text_home">Home Fragment</string>
@@ -109,12 +112,10 @@
     <string name="title_activity_story_page_activity">StoryPageAcitivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="dr_griffs_title_text">Doctr Griffs</string>
+    <string name="dr_griffs_title_text">Dr. Griffs</string>
     <string name="read_more_text">read more</string>
-    <string name="text_dr_griffs">Doctr Griffs</string>
+    <string name="text_dr_griffs">Dr. Griffs</string>
     <string name="text_the_little_box">The Little Box</string>
-    <string name="text_concert_reviews">Concert Reviews</string>
-    <string name="text_rob_lavaque">Rob Lavaque</string>
     <string name="text_events">Events</string>
     <string name="text_album_reviews">Album Reviews</string>
     <string name="text_juicy_title_text">Juicy Connotations</string>
@@ -125,4 +126,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_no_saves">No saved media yet!</string>
+    <string name="title_juicy_connotation">Juicy Connotation</string>
+    <string name="del_paxton">title_paxton</string>
+    <string name="title_rosehip">Rosehip</string>
+    <string name="title_wagoneer">Grand Wagoneer</string>
+    <string name="title_artawake">Art Awake 2017</string>
+    <string name="title_bugjar">Bugjar</string>
 </resources>

@@ -52,7 +52,6 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Intro Video
                     case "https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be":
-
                         Uri uri = Uri.parse(link); // missing 'http://' will cause crashed
                         intent = new Intent(Intent.ACTION_VIEW, uri);
                         finish();
@@ -60,8 +59,20 @@ public class CameraActivity extends AppCompatActivity {
 
                         break;
 
+
+                    // CHANGE YOUTUBE LINK TO FINAL!!!!!!
+                    case "http://sound-chk-00-introVID":
+                        intent = new Intent(getBaseContext(), VideoActivity.class);
+                        intent.putExtra("video", "intro");
+                        finish();
+                        startActivity(intent);
+
+                        break;
+
+
                     // QR code: Dr. Griffs Story Page
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
+                    case "http://sound-chk-01-griffs":
+                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
                     //case "market://detailsintroVID":
 
                         //getView().findViewById(buttonId).setBackground(getResources().getDrawable(drawableId));
@@ -78,39 +89,9 @@ public class CameraActivity extends AppCompatActivity {
 
                         break;
 
-                    // QR code: Juicy Connotation Story Page
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a":
-                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        intent.putExtra("unlocked", "juicy");
-                        intent.putExtra("locked", "juicy");
-                        finish();
-                        startActivity(intent);
-
-                        SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
-                        SharedPreferences.Editor editor2 = preferences2.edit();
-                        editor2.putString("storemedia_juicy","juicy");
-                        editor2.apply();
-
-                        break;
-
-                    // QR code: Lavaque Story Page
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9":
-                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        intent.putExtra("unlocked", "lavaque");
-                        intent.putExtra("locked", "lavaque");
-                        finish();
-                        startActivity(intent);
-
-                        SharedPreferences preferences3 = PreferenceManager.getDefaultSharedPreferences(this);
-                        SharedPreferences.Editor editor3 = preferences3.edit();
-                        editor3.putString("storemedia_lavaque","lavaque");
-                        editor3.apply();
-
-                        break;
-
-
                     // QR code: Little Box Story Page
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583":
+                    case "http://sound-chk-02-little":
+                        //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         Log.d("TAG", "little working");
                         intent.putExtra("unlocked", "little");
@@ -125,8 +106,41 @@ public class CameraActivity extends AppCompatActivity {
 
                         break;
 
+                    // QR code: Juicy Connotation Story Page
+                    case "http://sound-chk-03-juicy":
+                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "juicy");
+                        intent.putExtra("locked", "juicy");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences2 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor2 = preferences2.edit();
+                        editor2.putString("storemedia_juicy","juicy");
+                        editor2.apply();
+
+                        break;
+
+                    // QR code: Lavaque Story Page
+                    case "http://sound-chk-04-paxton":
+                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "lavaque");
+                        intent.putExtra("locked", "lavaque");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences3 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor3 = preferences3.edit();
+                        editor3.putString("storemedia_lavaque","lavaque");
+                        editor3.apply();
+
+                        break;
+
                     // QR code: Album Review Story Page
-                    case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64":
+                    case "http://sound-chk-06-rosehip":
+                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         Log.d("TAG", "album working");
                         intent.putExtra("unlocked", "album");
@@ -140,6 +154,58 @@ public class CameraActivity extends AppCompatActivity {
                         editor5.apply();
 
                         break;
+
+                    // QR code: Album Review: Wagoneer
+                    case "http://sound-chk-05-wagoneer":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        Log.d("TAG", "album working");
+                        intent.putExtra("unlocked", "wagoneer");
+                        intent.putExtra("locked", "wagoneer");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences6 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor6 = preferences6.edit();
+                        editor6.putString("storemedia_album","wagoneer");
+                        editor6.apply();
+
+                        break;
+
+
+                    // QR code: Gig Review: Bugjar
+                    case "http://sound-chk-08-bugjar":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        Log.d("TAG", "album working");
+                        intent.putExtra("unlocked", "bugjar");
+                        intent.putExtra("locked", "bugjar");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences7 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor7 = preferences7.edit();
+                        editor7.putString("storemedia_album","bugjar");
+                        editor7.apply();
+
+                        break;
+
+
+                    // QR code: Gig Review: Art Awake 2017
+                    case "http://sound-chk-07-artawake":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        Log.d("TAG", "album working");
+                        intent.putExtra("unlocked", "artawake");
+                        intent.putExtra("locked", "artawake");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences8 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor8 = preferences8.edit();
+                        editor8.putString("storemedia_album","artawake");
+                        editor8.apply();
+
+                        break;
+
+
                 }
             }
         }

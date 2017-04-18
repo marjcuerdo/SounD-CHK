@@ -2,7 +2,8 @@
             xmlns:tools="http://schemas.android.com/tools"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:scrollbarThumbVertical="@drawable/scrollbar"
+            android:id="@+id/scroll_view"
+            android:scrollbarThumbVertical="@drawable/scrollbar_feed"
             tools:context="com.soundchkapp.soundchk.StoryPageActivity">
 
     <LinearLayout
@@ -20,31 +21,29 @@
             >
 
             <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="7"
+                android:layout_weight="8.75"
+                android:gravity="center"
                 android:maxHeight="550dp"
                 android:minHeight="550dp"
-                android:gravity="center"
-                android:textColor="@color/colorWhite"
-                android:textSize="50sp"
-                android:textStyle="bold"
                 android:shadowColor="@color/colorBlack"
-                android:shadowRadius="1.5"
                 android:shadowDx="8"
                 android:shadowDy="8"
-                android:id="@+id/textView"/>
+                android:shadowRadius="1.5"
+                android:textColor="@color/colorWhite"
+                android:textSize="50sp"
+                android:textStyle="bold"/>
 
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:minHeight="50dp"
-                android:maxHeight="50dp"
-                android:layout_weight="3"
+                android:layout_weight="1.25"
                 android:src="@drawable/down_arrow"
                 android:scaleType="fitCenter"
                 android:background="@color/colorBlack"
-                android:id="@+id/button7"/>
+                android:id="@+id/button_scroll_down"/>
         </LinearLayout>
 
         <TextView
@@ -60,81 +59,148 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/locked_holder"
-            android:weightSum="3"
-            android:paddingTop="5dp"
-            android:paddingBottom="5dp"
+            android:gravity="start"
+            android:background="@color/colorGrey"
             android:orientation="horizontal">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/images"/>
 
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/locked"
-                android:id="@+id/imglocked1"/>
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/locked"
-                android:id="@+id/imglocked2"/>
-            <ImageButton
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/locked"
-                android:id="@+id/imglocked3"/>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/locked_holder"
+                android:orientation="horizontal"
+                android:background="@color/colorGrey">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/locked"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked1"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/locked"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked2"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/locked"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked3"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/locked"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/extra_locked_holder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:visibility="gone"
-            android:weightSum="3"
-            >
-            <ImageButton
-                android:id="@+id/imglocked4"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/play"
-                />
-            <ImageButton
-                android:id="@+id/imglocked5"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/play"
-                />
-            <ImageButton
-                android:id="@+id/imglocked6"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/play"
-                />
+            android:background="@color/colorGrey">
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/video"/>
 
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:id="@+id/extra_locked_holder"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:background="@color/colorBlack">
+
+                    <!--<com.google.android.youtube.player.YouTubePlayerView
+                        android:id="@+id/youtube_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>-->
+
+                    <ImageButton
+                        android:id="@+id/imglocked4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/play"
+                        />
+
+                    <ImageButton
+                        android:id="@+id/imglocked5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/play"
+                        />
+                    <ImageButton
+                        android:id="@+id/imglocked6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="fitCenter"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/play"
+                        />
+
+                </LinearLayout>
+            </HorizontalScrollView>
         </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/story_free"
-            android:background="@color/colorGreen"
+            android:background="@color/colorBlack"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:paddingTop="25dp"
@@ -147,7 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/story_locked"
-            android:background="@color/colorGreen"
+            android:background="@color/colorBlack"
             android:textColor="@color/colorWhite"
             android:textSize="18sp"
             android:paddingTop="0dp"

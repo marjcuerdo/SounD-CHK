@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 /**
  * Created by marjorieanncuerdo on 11/16/16.
@@ -21,9 +22,9 @@ public class FaveFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_favorites, container, false);
 
-        Button button_fave_vid = (Button) v.findViewById(R.id.button_fave_vid);
-        Button button_fave_images = (Button) v.findViewById(R.id.button_fave_images);
-        Button button_fave_audio = (Button) v.findViewById(R.id.button_fave_audio);
+        ImageButton button_fave_vid = (ImageButton) v.findViewById(R.id.button_fave_vid);
+        ImageButton button_fave_images = (ImageButton) v.findViewById(R.id.button_fave_images);
+        ImageButton button_fave_audio = (ImageButton) v.findViewById(R.id.button_fave_audio);
 
         button_fave_audio.setOnClickListener(this);
         button_fave_images.setOnClickListener(this);

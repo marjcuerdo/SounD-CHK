@@ -64,7 +64,9 @@ public class CameraFragment extends Fragment {
         button_intro_vid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be"));
+                //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be"));
+                Intent intent = new Intent(getActivity(), VideoActivity.class);
+                intent.putExtra("video", "intro");
                 startActivity(intent);
             }
         });

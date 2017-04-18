@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="dr_griffs_title_text">DOCTR GRIFFS</string>
+    <string name="dr_griffs_title_text">Dr. Griffs</string>
     <string name="read_more_text">read more</string>
-    <string name="text_dr_griffs">DR. GRIFFS</string>
+    <string name="text_dr_griffs">Dr. Griffs</string>
     <string name="text_the_little_box">THE LITTLE BOX</string>
-    <string name="text_concert_reviews">CONCERT REVIEWS</string>
-    <string name="text_rob_lavaque">ROB LAVAQUE</string>
-    <string name="text_events">EVENTS</string>
-    <string name="text_album_reviews">ALBUM REVIEWS</string>
     <string name="text_scan_qr_code">Scan</string>
     <string name="text_no_saves">No saved media yet!</string>
+    <string name="title_juicy_connotation">Juicy Connotation</string>
+    <string name="del_paxton">Del Paxton</string>
+    <string name="title_rosehip">Rosehip</string>
+    <string name="title_wagoneer">Grand Wagoneer</string>
+    <string name="title_artawake">Art Awake 2017</string>
+    <string name="title_bugjar">Bugjar</string>
 </resources>
