@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_height="match_parent"
-              android:layout_width="match_parent"
-              android:id="@+id/container_parent"
-              android:orientation="vertical"
-              android:background="@color/colorBlack"
-              xmlns:android="http://schemas.android.com/apk/res/android">
-    <ScrollView android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:scrollbarThumbVertical="@drawable/scrollbar">
+<HorizontalScrollView
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:background="@color/colorBlack"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/container_faves"
-                  xmlns:android="http://schemas.android.com/apk/res/android"/>
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/container_faves">
+    </LinearLayout>
 
-    </ScrollView>
-</LinearLayout>
+</HorizontalScrollView>

@@ -11,12 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ImageButton;
 import android.util.Log;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import android.support.v7.app.ActionBar.LayoutParams;
 
 public class FaveActivity extends AppCompatActivity {
 
@@ -29,7 +31,7 @@ public class FaveActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences1.edit();
 
         LinearLayout container_faves = (LinearLayout) findViewById(R.id.container_faves);
-        LinearLayout container_parent = (LinearLayout) findViewById(R.id.container_parent);
+        //LinearLayout container_parent = (LinearLayout) findViewById(R.id.container_parent);
         //ImageButton btnGreen = new ImageButton(this);
 
             switch (getIntent().getStringExtra("fave")) {
@@ -50,7 +52,7 @@ public class FaveActivity extends AppCompatActivity {
                         addSavedVid(container_faves, "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing");
                     }
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_parent);
+                        emptyMessage(container_faves);
                     }
                     break;
                 case "images":
@@ -83,22 +85,30 @@ public class FaveActivity extends AppCompatActivity {
                         addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a");
                     }
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_parent);
+                        emptyMessage(container_faves);
                     }
                     break;
                 case "audio":
                     if (preferences1.contains("status")) {
-                        emptyMessage(container_parent);
+                        emptyMessage(container_faves);
                     }
                     break;
             }
-
-
 
     }
 
     public void addSavedImg(LinearLayout linearLayout, String url) {
         ImageButton btn = new ImageButton(this);
+        //linearLayout.setWeightSum(2);
+        //LinearLayout.LayoutParams lParams = (LinearLayout.LayoutParams) linearLayout.setLayoutParams(100, 100, );
+        //lParams.weight = 1;
+        //btn.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+        btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        //btn.setScaleType(ImageView.ScaleType.FIT_XY);
+        //btn.setMaxHeight(750);
+
+        btn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,0.5f));
+        //btn.setLayoutParams(lParams);
 
         Glide.with(this.getApplicationContext())
                 //.using(new FirebaseImageLoader())
@@ -131,7 +141,9 @@ public class FaveActivity extends AppCompatActivity {
         tv.setTextColor(Color.WHITE);
         tv.setTextSize(35);
         tv.setTypeface(null, Typeface.BOLD);
-        tv.setGravity(Gravity.CENTER);
+        tv.setGravity(Gravity.CENTER_VERTICAL);
+        tv.setPadding(75,75,75,75);
+        linearLayout.canScrollHorizontally(1);
         linearLayout.addView(tv);
     }
 
