@@ -143,7 +143,8 @@ public class FaveActivity extends AppCompatActivity {
         tv.setTypeface(null, Typeface.BOLD);
         tv.setGravity(Gravity.CENTER_VERTICAL);
         tv.setPadding(75,75,75,75);
-        linearLayout.canScrollHorizontally(1);
+        linearLayout.stopNestedScroll();
+        //linearLayout.canScrollHorizontally(1);
         linearLayout.addView(tv);
     }
 

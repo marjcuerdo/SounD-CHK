@@ -1,12 +1,14 @@
 package com.soundchkapp.soundchk;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -51,6 +53,7 @@ public class StoryPageActivity extends AppCompatActivity{
 
         final TextView tv = (TextView) findViewById(R.id.textView);
         TextView lockedtext = (TextView) findViewById(R.id.lockedtext);
+        TextView storyfree = (TextView) findViewById(R.id.story_free);
         TextView story_locked = (TextView) findViewById(R.id.story_locked);
         LinearLayout locked_holder = (LinearLayout) findViewById(R.id.locked_holder);
         LinearLayout locked_holder2 = (LinearLayout) findViewById(R.id.extra_locked_holder);
@@ -62,6 +65,23 @@ public class StoryPageActivity extends AppCompatActivity{
         final ImageButton iv6 = (ImageButton) findViewById(R.id.imglocked6);
         final ImageButton button_scroll_down = (ImageButton) findViewById(R.id.button_scroll_down);
         //youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+
+        final Button scan_button = (Button)findViewById(R.id.scan_btn);
+
+        scan_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //button.setBackgroundColor(Color.BLUE);
+                //TextView tv = (TextView)getView().findViewById(R.id.scan_instructions);
+                //tv.setVisibility(View.GONE);
+                //scan_button.setBackgroundResource(R.drawable.roundedbutton_clicked);
+                //button.setTextColor(Color.WHITE);
+                Intent intent = new Intent(getBaseContext(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         //youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
 
@@ -98,7 +118,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
 
-                setLockedStoryPage(tv, R.drawable.final_story_griffs, R.string.dr_griffs_title_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
+                //setLockedStoryPage(tv, R.drawable.final_story_griffs, R.string.dr_griffs_title_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -108,7 +128,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
-                setLockedStoryPage(tv, R.drawable.final_story_little, R.string.text_the_little_box, iv1, iv2, iv3, "little", url1, url2, url3, locked_holder);
+                //setLockedStoryPage(tv, R.drawable.final_story_little, R.string.text_the_little_box, iv1, iv2, iv3, "little", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -117,7 +137,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
 
-                setLockedStoryPage(tv, R.drawable.final_story_juicy, R.string.text_juicy_title_text, iv1, iv2, iv3, "juicy", url1, url2, url3, locked_holder);
+                //setLockedStoryPage(tv, R.drawable.final_story_juicy, R.string.title_juicy_connotation, iv1, iv2, iv3, "juicy", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -126,7 +146,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
-                setLockedStoryPage(tv, R.drawable.final_story_paxton, R.string.del_paxton, iv1, iv2, iv3, "paxton", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_paxton, R.string.del_paxton, storyfree, R.string.paxton_short_text, iv1, iv2, iv3, "paxton", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -135,7 +155,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9";
 
-                setLockedStoryPage(tv, R.drawable.final_story_rosehip, R.string.title_rosehip, iv1, iv2, iv3, "rosehip", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_rosehip, R.string.title_rosehip, storyfree, R.string.rosehip_short_text, iv1, iv2, iv3, "rosehip", url1, url2, url3, locked_holder);
 
                 tv.setBackgroundResource(R.drawable.final_story_rosehip);
                 tv.setText(R.string.title_rosehip);
@@ -147,7 +167,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
-                setLockedStoryPage(tv, R.drawable.final_story_wagoneer, R.string.title_wagoneer, iv1, iv2, iv3, "wagoneer", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_wagoneer, R.string.title_wagoneer, storyfree, R.string.wagoneer_short_text, iv1, iv2, iv3, "wagoneer", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -156,7 +176,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
 
-                setLockedStoryPage(tv, R.drawable.final_story_artawake, R.string.title_artawake, iv1, iv2, iv3, "artawake", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_artawake, R.string.title_artawake, storyfree, R.string.artawake_short_text, iv1, iv2, iv3, "artawake", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -165,7 +185,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
 
-                setLockedStoryPage(tv, R.drawable.final_story_bugjar, R.string.title_bugjar, iv1, iv2, iv3, "bugjar", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_bugjar, R.string.title_bugjar, storyfree, R.string.bugjar_short_text, iv1, iv2, iv3, "bugjar", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -184,6 +204,8 @@ public class StoryPageActivity extends AppCompatActivity{
                     url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/Chess%20final.png?alt=media&token=5accd9df-1911-4cda-83f5-9f1b63c9dca7";
                     url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee";
                     url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
+
+                    scan_button.setVisibility(View.GONE);
 
                     setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
@@ -294,6 +316,21 @@ public class StoryPageActivity extends AppCompatActivity{
                     toastFaveReminder();
                     tv.setBackgroundResource(R.drawable.final_story_paxton);
                     tv.setText(R.string.del_paxton);
+
+                    lockedtext.setText("***UNLOCKED CONTENT***");
+                    lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+
+                    tv.setBackgroundResource(R.drawable.final_story_paxton);
+                    tv.setText(R.string.del_paxton);
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.paxton_long_text);
+
+
                     break;
 
                 case "rosehip":
@@ -301,6 +338,16 @@ public class StoryPageActivity extends AppCompatActivity{
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+
+                    tv.setBackgroundResource(R.drawable.final_story_rosehip);
+                    tv.setText(R.string.title_rosehip);
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.rosehip_long_text);
+
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
@@ -314,8 +361,6 @@ public class StoryPageActivity extends AppCompatActivity{
                     Glide.with(this.getApplicationContext())
                             .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9")
                             .into(iv3);
-
-                    story_locked.setVisibility(View.VISIBLE);
 
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -373,20 +418,55 @@ public class StoryPageActivity extends AppCompatActivity{
 
                 case "wagoneer":
                     toastFaveReminder();
+                    lockedtext.setText("***UNLOCKED CONTENT***");
+                    lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+
                     tv.setBackgroundResource(R.drawable.final_story_wagoneer);
                     tv.setText(R.string.title_wagoneer);
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.wagoneer_long_text);
+
                     break;
 
                 case "artawake":
                     toastFaveReminder();
+
+                    lockedtext.setText("***UNLOCKED CONTENT***");
+                    lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+
                     tv.setBackgroundResource(R.drawable.final_story_artawake);
                     tv.setText("Art Awake 2017");
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.artawake_long_text);
+
                     break;
 
                 case "bugjar":
                     toastFaveReminder();
+
+                    lockedtext.setText("***UNLOCKED CONTENT***");
+                    lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
+                    locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+
                     tv.setBackgroundResource(R.drawable.final_story_bugjar);
                     tv.setText(R.string.title_bugjar);
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.bugjar_long_text);
+
                     break;
 
             }
@@ -415,9 +495,10 @@ public class StoryPageActivity extends AppCompatActivity{
 
 
     //
-    public void setLockedStoryPage(TextView tv, int drawableId, int titleId, ImageButton iv1, ImageButton iv2, ImageButton iv3, String name, String url1, String url2, String url3, LinearLayout layout) {
+    public void setLockedStoryPage(TextView tv, int drawableId, int titleId, TextView tvStoryFree, int stringId, ImageButton iv1, ImageButton iv2, ImageButton iv3, String name, String url1, String url2, String url3, LinearLayout layout) {
         tv.setBackgroundResource(drawableId);
         tv.setText(titleId);
+        tvStoryFree.setText(stringId);
         iv1.setScaleType(ImageView.ScaleType.FIT_XY);
         iv2.setScaleType(ImageView.ScaleType.FIT_XY);
         iv3.setScaleType(ImageView.ScaleType.FIT_XY);
@@ -458,6 +539,10 @@ public class StoryPageActivity extends AppCompatActivity{
                 .into(iv3);
 
         storyTxt.setVisibility(View.VISIBLE);
+    }
+
+    public void setLockedText(TextView story_locked, int stringId) {
+        story_locked.setText(stringId);
     }
 
     public void setSaveImgListeners(ImageView iv, final String filename, final SharedPreferences.Editor editor) {

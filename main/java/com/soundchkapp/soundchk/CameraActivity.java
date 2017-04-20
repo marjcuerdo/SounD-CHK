@@ -122,43 +122,44 @@ public class CameraActivity extends AppCompatActivity {
 
                         break;
 
-                    // QR code: Lavaque Story Page
+                    // FINISHED!
+                    // QR code: Album Review: Del Paxton
                     case "http://sound-chk-04-paxton":
                     //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        intent.putExtra("unlocked", "lavaque");
-                        intent.putExtra("locked", "lavaque");
+                        intent.putExtra("unlocked", "paxton");
+                        intent.putExtra("locked", "paxton");
                         finish();
                         startActivity(intent);
 
                         SharedPreferences preferences3 = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor3 = preferences3.edit();
-                        editor3.putString("storemedia_lavaque","lavaque");
+                        editor3.putString("storemedia_paxton","paxton");
                         editor3.apply();
 
                         break;
 
-                    // QR code: Album Review Story Page
+                    // FINISHED!
+                    // QR code: Album Review: Rosehip
                     case "http://sound-chk-06-rosehip":
                     //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        Log.d("TAG", "album working");
-                        intent.putExtra("unlocked", "album");
-                        intent.putExtra("locked", "album");
+                        intent.putExtra("unlocked", "rosehip");
+                        intent.putExtra("locked", "rosehip");
                         finish();
                         startActivity(intent);
 
                         SharedPreferences preferences5 = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor5 = preferences5.edit();
-                        editor5.putString("storemedia_album","album");
+                        editor5.putString("storemedia_rosehip","rosehip");
                         editor5.apply();
 
                         break;
 
+                    // FINISHED!
                     // QR code: Album Review: Wagoneer
                     case "http://sound-chk-05-wagoneer":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        Log.d("TAG", "album working");
                         intent.putExtra("unlocked", "wagoneer");
                         intent.putExtra("locked", "wagoneer");
                         finish();
@@ -166,33 +167,15 @@ public class CameraActivity extends AppCompatActivity {
 
                         SharedPreferences preferences6 = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor6 = preferences6.edit();
-                        editor6.putString("storemedia_album","wagoneer");
+                        editor6.putString("storemedia_wagoneer","wagoneer");
                         editor6.apply();
 
                         break;
 
-
-                    // QR code: Gig Review: Bugjar
-                    case "http://sound-chk-08-bugjar":
-                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        Log.d("TAG", "album working");
-                        intent.putExtra("unlocked", "bugjar");
-                        intent.putExtra("locked", "bugjar");
-                        finish();
-                        startActivity(intent);
-
-                        SharedPreferences preferences7 = PreferenceManager.getDefaultSharedPreferences(this);
-                        SharedPreferences.Editor editor7 = preferences7.edit();
-                        editor7.putString("storemedia_album","bugjar");
-                        editor7.apply();
-
-                        break;
-
-
+                    // FINISHED!
                     // QR code: Gig Review: Art Awake 2017
                     case "http://sound-chk-07-artawake":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
-                        Log.d("TAG", "album working");
                         intent.putExtra("unlocked", "artawake");
                         intent.putExtra("locked", "artawake");
                         finish();
@@ -200,11 +183,26 @@ public class CameraActivity extends AppCompatActivity {
 
                         SharedPreferences preferences8 = PreferenceManager.getDefaultSharedPreferences(this);
                         SharedPreferences.Editor editor8 = preferences8.edit();
-                        editor8.putString("storemedia_album","artawake");
+                        editor8.putString("storemedia_artawake","artawake");
                         editor8.apply();
 
                         break;
 
+                    // FINISHED!
+                    // QR code: Gig Review: Bugjar
+                    case "http://sound-chk-08-bugjar":
+                        intent = new Intent(getBaseContext(), StoryPageActivity.class);
+                        intent.putExtra("unlocked", "bugjar");
+                        intent.putExtra("locked", "bugjar");
+                        finish();
+                        startActivity(intent);
+
+                        SharedPreferences preferences7 = PreferenceManager.getDefaultSharedPreferences(this);
+                        SharedPreferences.Editor editor7 = preferences7.edit();
+                        editor7.putString("storemedia_bugjar","bugjar");
+                        editor7.apply();
+
+                        break;
 
                 }
             }

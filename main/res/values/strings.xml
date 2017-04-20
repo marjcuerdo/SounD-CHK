@@ -3,27 +3,206 @@
     <string name="seek_to">Jump To</string>
     <string name="seek_to_hint">Seconds</string>
     <string name="app_name">SounD CHK</string>
-    <string name="tester_text">Tester Text</string>
-    <string name="text_home">Home Fragment</string>
-    <string name="text_favorites">Favorites Fragment</string>
-    <string name="text_camera">Camera Fragment</string>
-    <string name="text_feed">Feed Fragment</string>
     <string name="menu_home">Home</string>
     <string name="menu_camera">QR Code Reader</string>
     <string name="menu_notifications">Notifications</string>
     <string name="menu_favorites">Favorites</string>
-    <string name="test_text_true">feed is true</string>
-    <string name="test_text_false">feed is false</string>
     <string name="text_read_QR">Reading QR Code...</string>
     <string name="title_activity_story_page">StoryPageActivity</string>
+
+    <string name="read_more">".\nUnlock with QR Code to READ MORE\n."</string>
+
+    <string name="paxton_short_text">
+        "Del Paxton - “All Day, Every Day, All Night”\n\n"
+
+        "By Nathan Raymond\n\n"
+
+	    "Del Paxton is a three-piece rock group from Buffalo, New York which formed in 2013. With"
+        "the help of Topshelf Records, the band released their debut full-length ‘All Day, Every Day"
+        ", All Night’ on March 3rd, 2017. The release offers 11 songs, each infectiously catchy punk"
+        "and pop-rock tunes with technical, math-rock undertones.\n\n"
+    </string>
+
+    <string name="paxton_long_text">
+        "While Del Paxton’s music is often energetic, loud, and crunchy, there are plenty of"
+        "atmospheric guitar riffs and vocal harmonies to compliment this, resulting in an album that"
+        "is both sonically and emotionally dynamic. Tracks such as ‘Loose Leaf’ and ‘Wrong Distance’"
+        "affirm the band’s driving punk and emo influences, while ‘Koolwink’ and ‘Thermos’ channel"
+        "more of a pop-rock delivery.\n\n"
+
+        "Guitarist and vocalist, Dylan England, writes lyrics that are both memorable and highly"
+        "relatable, often regarding day-to-day activities such as taking long drives or embarking"
+        "on introspective walks home. Bassist, Zack Schoedel, offers harmonies to add depth to"
+        "Dylan’s catchy vocal melodies, and he even takes the lead with his own smart, personal"
+        "lyrics on tracks such as ‘Take It To The Limit’ and ‘Primetime’. While Dylan executes"
+        "well-crafted leads, and Zack rips technically-configured melodies, all of this is held"
+        "together by Greg McClure’s tasteful drumming. Greg cleverly incorporates jerky shifts in"
+        "rhythm and spastic fills to guide Dylan and Zack towards unexpected changes in tempo."
+        "This makes listening to Del Paxton a highly interesting and involved experience. Whether"
+        "you’re a fan of angsty emo-revival bands such as Snowing, or if you have a soft spot for"
+        "90’s pop-rock groups like Third Eye Blind, there is no shortage of beautifully-constructed,"
+        "heartfelt tracks for you to enjoy.\n\n"
+    </string>
+
+    <string name="rosehip_short_text">
+        "Rosehip - “Sore”\n\n"
+
+        "By Nick Raymond\n\n"
+
+        "If you’re looking for an atmospheric, acoustic singer-songwriter record that’s extremely relaxing but equally emotional, then look no further than"
+        "Rosehip’s new EP titled Sore. These five tracks consist of lush acoustic guitars which perfectly complement the gentle voice of Mackenzie Harris.\n\n"
+    </string>
+
+    <string name="rosehip_long_text">
+        "While Sore is a sonically pleasant listen, Rosehip’s melancholy, detailed lyrics are what"
+        "give these tracks depth. Whether she is contemplating her relationship with her parents,"
+        "such as in the opening track, “6:28 AM”, or ruminating on a lost love on “Unruly Lover”,"
+        "Rosehip has the power to transport the listener into her emotional state by using only a"
+        "few words.\n\n"
+
+        "While the bulk of this EP is filled with angst and sadness, there are some playful and"
+        "humorous lyrics on the standout track “14th Colony”. As the record’s sole upbeat tune,"
+        "this pop-influenced track provides a refreshing change of pace by showcasing charisma and"
+        "personality. The second verse is particularly care-free, as Rosehip sings  “Let's get"
+        "married today / Blind eye to what is happening / Even if we're not in love, / The tax"
+        "breaks cut it I'm sure” over a staccatoed acoustic rhythm. But before it ends, Rosehip"
+        "flips the song on it’s head by giving a gloomier depiction of not being in love"
+        "(“But it's true, what they say We're not in love, none to blame 'Cause I'm inclined to"
+        "stop short from the start). This clever trick allows “14th Colony” to flow seamlessly"
+        "into the rest of the otherwise downcast EP. All in all, this record is the perfect"
+        "soundtrack to a grey-skied, rainy afternoon. If a full length record from Rosehip is in"
+        "the cards, it will undoubtedly be worth a listen.\n\n"
+    </string>
+
+    <string name="wagoneer_short_text">
+        "Grand Wagoneer - “Reservoir”\n\n"
+
+        "By Nick Raymond\n\n"
+
+        "“I\'d self describe as a non-believing acolyte\nhalf-heartedly agreeing to everything to avoid a fight“"
+
+        "\n\nThese are the first words sung on Grand Wagoneer\’s debut record titled Reservoir. The"
+        "confessional and intimate lyrics here are a good indication of the story that will be told"
+        "throughout the album. Nostalgia for love lost, self-deprecation, and religion are some of"
+        "the recurring themes that Grand Wagoneer - aka Ben Schmitz - analyzes with sharp detail"
+        "and stunning imagery on many of the tracks. Lyrically, this album fits snuggly into the "
+        "recent wave of sadcore/emo music that has been sweeping the underground as of late.\n\n"
+    </string>
+
+    <string name="wagoneer_long_text">
+        "But while the direct, emotional lyrics are the core of the record, it is the varied instrumentation that makes this body"
+        "of work stand out from the rest. The opening track, “Diplomat”, takes the form of a mellow singer/songwriter tune with shimmering,"
+        "layered acoustic guitars, tinged by plucking banjos and a mesmerizing keyboard riff that drives the song. What makes Reservoir so"
+        "special is its authentic blend of many different genres, all of which Schmitz pulls off earnestly and effortlessly.\n\n"
+
+        "The album’s third track is the true gem of the album. “Charlotte” is a piano-driven, Ben Folds-esque tune accompanied by"
+        "epic baroque style horns. The narrative is a sad tale about a first love forbidden by his parents due to their religious beliefs."
+        "But the grand instrumentation emphasizes the joy of the relationship, rather than ruminating on its abrupt demise.\n\n"
+
+        "Many of the following songs make use of the electric guitar - particularly on the brooding track appropriately titled"
+        "“Thumping and Thrashing”, and the energetic interlude “The Year in Review”, which sounds inspired by 90s indie bands"
+        "such as Built to Spill.\n\n"
+
+        "For an album of 11 songs, this record covers a lot of musical ground. Alternating between soft acoustic music such as"
+        "on the minimalistic ballad “Say Goodbye”, guitar-driven indie rock on “Empire State”, and electronic loops on the"
+        "reflective title track, is not an easy task. But Schmitz doesn’t just makes it work - he makes it work incredibly well."
+        "As a result, Reservoir is a musically unpredictable, lyrically relatable, and wholly impressive record that is an extremely"
+        "satisfying listening experience.\n\n"
+    </string>
+
+
+    <string name="artawake_short_text">
+        "ArtAwake 2017!\n\n"
+
+        "By Nathan Raymond\n\n"
+
+        "Each year, students at the University of Rochester who are determined to promote the"
+        "presence of art and music in our community join forces to host ArtAwake – an all-day art"
+        "and music festival featuring a beautiful variety of art installations and music performances"
+        "by local artists. On April 8th, the event was held at Rettner Hall on the University of"
+        "Rochester campus. I managed to catch a few of the musical acts, and I was wildly impressed with what I heard.\n\n"
+    </string>
+
+    <string name="artawake_long_text">
+        "Performing right outside of Rettner hall in the calm Spring air, I caught ‘Simba Marimba’,"
+        "an African music group from the Eastman School of Music. The ensemble consists of only"
+        "percussive instruments, all various types of marimbas aside from the drum set. The marimbas"
+        "dramatically range in size, where the smaller high-pitched instruments hold the melody,"
+        "and the larger lower-pitched marimbas are used for rhythm and bass. The tunes that the"
+        "ensemble played were all joyful, enthusiastic, and incredibly technical. Playing these advanced"
+        "marimba parts must have demanded some serious hand-eye coordination skills. However, what"
+        "was even more impressive was the degree to which the Simba Marimba ensemble’s music radiated"
+        "love and happiness in their art. This was clearly evident by a quick survey of the audience,"
+        "as we all watched with wonder and smiles upon our faces.\n\n"
+
+        "Another highlight of the evening was catching Tart Vandelay perform on the third floor of"
+        "Rettner Hall. While the full-band typically contains four members, Katie Halligan"
+        "(Vocals/Synth/Ukelele) and Martin LoFaso (Guitar/Vocals) performed a stripped-down set for us."
+        "Tart Vandelay  builds on the sounds of indie rock, incorporating powerful vocal loops, as"
+        "well as jazz-and-blues influenced guitar riffs. The musicianship of these two performers"
+        "cannot be praised highly enough. I had to take a step back after hearing Katie reach a handful"
+        "of breathtakingly high notes with such strength, and witnessing Martin effortlessly shred"
+        "on the guitar. The band encompasses a modern indie/electronic sound, almost like a bluesier"
+        "Dirty Projectors, with an emphasis on powerful vocals and mindboggling harmonies.\n\n"
+
+        "These were merely two of the acts who caught my eye at the ArtAwake festival. Keep an eye"
+        "out next Spring for this annual art and music festival, as this is one of the most diverse,"
+        "local melting pot of musicians that you will stumble upon in Rochester!\n\n"
+    </string>
+
+    <string name="bugjar_short_text">
+        "Crawlin’ in the Bug Jar!\n\n"
+
+        "By Nathan Raymond\n\n"
+
+        "On a brisk night in late March, after driving through detours which were unaccounted for"
+        "on my GPS, I parked my car along the side of the road in a neighborhood off of Monroe Avenue."
+        "I was now within walking distance of my destination - Rochester’s beloved bar and concert venue,"
+        "The Bug Jar. I had attended this venue several times to catch rock and punk shows, but tonight"
+        "I would be experiencing three young local acts who would offer a variety of sounds including"
+        "funk, soul, pop, and in some cases, ‘juice’. Hip Conspiracy, The Saplings, and Juicy Connotation"
+        "would be taking the stage.\n\n"
+    </string>
+
+    <string name="bugjar_long_text">
+        "Hip Conspiracy was the first of the three bands to perform. Their act consists entirely"
+        "of University of Rochester students, and their sound is groovy, soulful, and captivating"
+        "to say the least. The band immediately drew the audience’s attention by opening their set"
+        "with a rendition of ‘Same Drugs’ by Chance the Rapper. Although Hip Conspiracy is a largely"
+        "instrumental band, drummer Mike Abbot lent his voice to the tune, while the band supported"
+        "him with a strong arrangement. Guitarist Luke Okerlund’s use of the lap steel guitar added"
+        "twangy, sliding melodies which fit beautifully with their rendition of the piece. Another"
+        "highlight of the band’s set was a track titled “When It Comes”, arranged by the band’s"
+        "keyboardist Thomas Mariano. The song began with layers of atmospheric chords, slowly opening"
+        "up to a point where Abbot switches the pulse from the hi-hat to the ride, and the keyboard"
+        "takes on the melody. Luke Okerlund and Saxophonist, Sam Schachter (performing in place of"
+        "Sean Levin and Miles Meth), each had their turn to rip solos as the song powered along,"
+        "while Josh Miller maintained a chill walking bass lick. The group eventually resolved into a"
+        "calm, concise outro.\n\n"
+
+        "Next, it was The Saplings’ turn to party. This group is composed of nine musicians, primarily"
+        "students who attend the Eastman School of Music. Their sound is exciting, and very difficult"
+        "to define in just a few words. The Saplings’ art contains the catchiness of pop and the energy"
+        "and technicality of prog-rock with an exuberant horn section, yet at times mellowing out to"
+        "capture a Buddy Holly-esque early rock-and-roll vibe. The nine of them crammed together on"
+        "The Bug Jar stage, but the tight space didn’t stop them from maintaining an infectiously"
+        "energetic stage presence. The band performed several tracks from their debut EP, with pianist"
+        "Abe Nouri and guitarist Greg Roberts splitting lead vocal and writing responsibilities."
+        "Matt Bent (drums) and Ryder Eaton (bass) often lent their vocal talents to create impressively"
+        "powerful four-part harmonies. One standout of the performance was the track, ‘Gonna Be a While’."
+        "The unforgettable vocal melodies, pleasing harmonies, and the punchy chime of Nouri’s Rhodes"
+        "piano all combined to create a crafty retro-pop tune that kept the entire room smiling.\n\n"
+    </string>
+
+
     <string name="short_text">
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
         "technologically advanced and open to imagination and magic.\n"</string>
+
     <string name="large_text">
-        "...\n\n"
         "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
         "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
         "flexibility of the material creates new affordances that supercede those in the physical "
@@ -107,29 +286,20 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="action_settings">Settings</string>
-
-    <string name="title_activity_story_page_activity">StoryPageAcitivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="dr_griffs_title_text">Dr. Griffs</string>
-    <string name="read_more_text">read more</string>
-    <string name="text_dr_griffs">Dr. Griffs</string>
     <string name="text_the_little_box">The Little Box</string>
-    <string name="text_events">Events</string>
-    <string name="text_album_reviews">Album Reviews</string>
-    <string name="text_juicy_title_text">Juicy Connotations</string>
+
+    <string name="title_juicy_connotation">Juicy Connotation</string>
+    <string name="del_paxton">Album Review: Del Paxton</string>
+    <string name="title_rosehip">Album Review: Rosehip</string>
+    <string name="title_wagoneer">Album Review: Grand Wagoneer</string>
+    <string name="title_artawake">Gig: Art Awake 2017</string>
+    <string name="title_bugjar">Gig: Bugjar</string>
 
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="text_scan_qr_code">Scan</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_no_saves">No saved media yet!</string>
-    <string name="title_juicy_connotation">Juicy Connotation</string>
-    <string name="del_paxton">title_paxton</string>
-    <string name="title_rosehip">Rosehip</string>
-    <string name="title_wagoneer">Grand Wagoneer</string>
-    <string name="title_artawake">Art Awake 2017</string>
-    <string name="title_bugjar">Bugjar</string>
+
+
+
 </resources>

@@ -22,6 +22,7 @@
             >
             <Button
                 android:text="@string/text_dr_griffs"
+                android:textAllCaps="false"
                 android:textStyle="bold"
                 android:background="@drawable/final_button_griffs"
                 android:textColor="@color/colorWhite"
@@ -32,20 +33,22 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
-                android:textSize="25sp"/>
+                android:textSize="30sp"/>
 
             <Button
                 android:text="@string/text_the_little_box"
+                android:textAllCaps="false"
                 android:textStyle="bold"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/final_button_little"
                 android:scaleType="fitXY"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 android:textColor="@color/colorWhite"
                 android:alpha="0.6"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="-20dp"
                 android:id="@+id/button2"/>
 
         </LinearLayout>
@@ -57,11 +60,12 @@
             <Button
                 android:text="@string/title_juicy_connotation"
                 android:textStyle="bold"
+                android:textAllCaps="false"
                 android:background="@drawable/final_button_juicy"
                 android:layout_height="200dp"
                 android:layout_width="match_parent"
                 android:id="@+id/button3"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 android:alpha="0.6"
                 android:textColor="@color/colorWhite"
                 />
@@ -76,6 +80,8 @@
             <Button
                 android:text="@string/del_paxton"
                 android:textStyle="bold"
+                android:textSize="20sp"
+                android:textAllCaps="false"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -88,6 +94,8 @@
             <Button
                 android:text="@string/title_rosehip"
                 android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="20sp"
                 android:background="@drawable/final_button_rosehip"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
@@ -101,6 +109,8 @@
             <Button
                 android:text="@string/title_wagoneer"
                 android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textSize="20sp"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -108,6 +118,7 @@
                 android:scaleType="fitCenter"
                 android:alpha="0.6"
                 android:textColor="@color/colorWhite"
+                android:layout_marginTop="-20dp"
                 android:id="@+id/button6"/>
         </LinearLayout>
 
@@ -122,6 +133,7 @@
                 android:id="@+id/button7"
                 android:text="@string/title_artawake"
                 android:textStyle="bold"
+                android:textAllCaps="false"
                 android:background="@drawable/final_button_artawake"
                 android:textColor="@color/colorWhite"
                 android:alpha="0.6"
@@ -130,17 +142,19 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="5dp"
-                android:textSize="25sp"/>
+                android:layout_marginTop="-20dp"
+                android:textSize="30sp"/>
 
             <Button
                 android:text="@string/title_bugjar"
                 android:textStyle="bold"
+                android:textAllCaps="false"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:background="@drawable/final_button_bugjar"
                 android:scaleType="fitXY"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 android:textColor="@color/colorWhite"
                 android:alpha="0.6"
                 android:layout_marginStart="5dp"

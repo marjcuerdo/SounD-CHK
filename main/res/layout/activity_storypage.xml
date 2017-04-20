@@ -209,6 +209,22 @@
             android:paddingBottom="0dp"
             android:text="@string/short_text"/>
 
+        <Button
+            android:id="@+id/scan_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/read_more"
+            android:paddingTop="0dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:background="@color/color_home_dark"
+            android:textColor="@color/colorWhite"
+            android:gravity="center"/>
+            <!--android:text="@string/short_text"-->
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
