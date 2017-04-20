@@ -26,13 +26,14 @@ public class ImageFullViewActivity extends AppCompatActivity {
             case "griffs2":
                 fullImgView.setBackgroundColor(Color.WHITE);
                 Glide.with(this.getApplicationContext())
-                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee")
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638")
                         .into(fullImgView);
                 break;
 
             case "griffs3":
                 Glide.with(this.getApplicationContext())
                         .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266")
+                        //.load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638")
                         .into(fullImgView);
                 break;
 

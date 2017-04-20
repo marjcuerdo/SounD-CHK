@@ -18,6 +18,8 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+
 import android.support.v7.app.ActionBar.LayoutParams;
 
 public class FaveActivity extends AppCompatActivity {
@@ -68,7 +70,7 @@ public class FaveActivity extends AppCompatActivity {
                             editor.remove("status");
                             editor.commit();
                         }
-                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee");
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638");
                     }
                     if (preferences1.contains("storefaveimg_griffs3")) {
                         if (preferences1.contains("status")) {
@@ -98,24 +100,27 @@ public class FaveActivity extends AppCompatActivity {
     }
 
     public void addSavedImg(LinearLayout linearLayout, String url) {
-        ImageButton btn = new ImageButton(this);
+        ImageView iv = new ImageView(this);
         //linearLayout.setWeightSum(2);
         //LinearLayout.LayoutParams lParams = (LinearLayout.LayoutParams) linearLayout.setLayoutParams(100, 100, );
         //lParams.weight = 1;
         //btn.setBackgroundColor(getResources().getColor(R.color.colorWhite));
-        btn.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        iv.setMinimumHeight(LinearLayout.LayoutParams.MATCH_PARENT);
+        iv.setForegroundGravity(View.TEXT_ALIGNMENT_CENTER);
+        iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        iv.setBackgroundColor(getColor(R.color.colorBlack));
         //btn.setScaleType(ImageView.ScaleType.FIT_XY);
         //btn.setMaxHeight(750);
 
-        btn.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,0.5f));
+        //iv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,0.5f));
         //btn.setLayoutParams(lParams);
 
         Glide.with(this.getApplicationContext())
                 //.using(new FirebaseImageLoader())
                 .load(url)
-                .into(btn);
+                .into(iv);
 
-        linearLayout.addView(btn);
+        linearLayout.addView(iv);
     }
 
     public void addSavedVid(LinearLayout linearLayout, final String url) {

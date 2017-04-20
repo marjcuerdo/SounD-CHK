@@ -118,7 +118,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
 
-                //setLockedStoryPage(tv, R.drawable.final_story_griffs, R.string.dr_griffs_title_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_griffs, R.string.dr_griffs_title_text, storyfree, R.string.short_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -167,7 +167,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
-                setLockedStoryPage(tv, R.drawable.final_story_wagoneer, R.string.title_wagoneer, storyfree, R.string.wagoneer_short_text, iv1, iv2, iv3, "wagoneer", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.wagon, R.string.title_wagoneer, storyfree, R.string.wagoneer_short_text, iv1, iv2, iv3, "wagoneer", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -202,7 +202,7 @@ public class StoryPageActivity extends AppCompatActivity{
                 case "griffs":
                     toastFaveReminder();
                     url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/Chess%20final.png?alt=media&token=5accd9df-1911-4cda-83f5-9f1b63c9dca7";
-                    url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/1.png?alt=media&token=96b9afec-389a-4a78-8889-cf924e11e8ee";
+                    url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638";
                     url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
 
                     scan_button.setVisibility(View.GONE);
@@ -498,6 +498,7 @@ public class StoryPageActivity extends AppCompatActivity{
     public void setLockedStoryPage(TextView tv, int drawableId, int titleId, TextView tvStoryFree, int stringId, ImageButton iv1, ImageButton iv2, ImageButton iv3, String name, String url1, String url2, String url3, LinearLayout layout) {
         tv.setBackgroundResource(drawableId);
         tv.setText(titleId);
+        tv.setAllCaps(true);
         tvStoryFree.setText(stringId);
         iv1.setScaleType(ImageView.ScaleType.FIT_XY);
         iv2.setScaleType(ImageView.ScaleType.FIT_XY);

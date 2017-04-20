@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+              android:background="@color/colorBlack"
+    >
+
+    <RelativeLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
                 android:paddingBottom="16dp"
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp"
-                android:background="@color/colorBlack"
+                android:background="@drawable/rochester"
                 tools:context="com.soundchkapp.soundchk.CameraActivity">
 
     <ImageButton
@@ -44,7 +50,7 @@
         android:textStyle="bold"
         android:id="@+id/scan_btn"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="75dp"
         android:shadowRadius="1"
         android:shadowDx="2"
         android:shadowDy="2"
@@ -55,8 +61,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/scan_instructions"
         android:layout_above="@id/scan_btn"
-        android:paddingTop="25dp"
-        android:paddingBottom="25dp"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorWhite"
@@ -76,4 +80,5 @@
         android:alpha="0.875"/>
 -->
 </RelativeLayout>
+</LinearLayout>
 
