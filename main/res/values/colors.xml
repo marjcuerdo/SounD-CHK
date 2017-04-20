@@ -9,6 +9,7 @@
     <color name="colorWhite">#FFFFFF</color>
 
 
+    <color name="colorWhiteBg">#eeffffff</color>
     <!--<color name="color_home">#259fa3</color>-->
     <color name="color_home">#1f8386</color>
     <color name="color_home_light">#d4e0e1</color>

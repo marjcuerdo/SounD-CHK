@@ -18,13 +18,15 @@ import android.widget.ImageButton;
 
 public class FaveFragment extends Fragment implements View.OnClickListener {
 
+    ImageButton button_fave_vid, button_fave_images, button_fave_audio;
+
     @Nullable
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_favorites, container, false);
 
-        ImageButton button_fave_vid = (ImageButton) v.findViewById(R.id.button_fave_vid);
-        ImageButton button_fave_images = (ImageButton) v.findViewById(R.id.button_fave_images);
-        ImageButton button_fave_audio = (ImageButton) v.findViewById(R.id.button_fave_audio);
+        button_fave_vid = (ImageButton) v.findViewById(R.id.button_fave_vid);
+        button_fave_images = (ImageButton) v.findViewById(R.id.button_fave_images);
+        button_fave_audio = (ImageButton) v.findViewById(R.id.button_fave_audio);
 
         button_fave_audio.setOnClickListener(this);
         button_fave_images.setOnClickListener(this);
@@ -41,6 +43,13 @@ public class FaveFragment extends Fragment implements View.OnClickListener {
         editor.putString("status", "empty");
         editor.commit();
 
+        button_fave_vid.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+        button_fave_vid.setImageResource(R.drawable.black_video);
+        button_fave_images.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+        button_fave_images.setImageResource(R.drawable.black_images);
+        button_fave_audio.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+        button_fave_audio.setImageResource(R.drawable.black_audio);
+
     }
 
     public void onClick(View v) {
@@ -49,16 +58,22 @@ public class FaveFragment extends Fragment implements View.OnClickListener {
 
         switch (v.getId()) {
             case R.id.button_fave_vid:
+                button_fave_vid.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+                button_fave_vid.setImageResource(R.drawable.video);
                 intent = new Intent(getActivity(), FaveActivity.class);
                 intent.putExtra("fave", "vids");
                 startActivity(intent);
                 break;
             case R.id.button_fave_images:
+                button_fave_images.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+                button_fave_images.setImageResource(R.drawable.images);
                 intent = new Intent(getActivity(), FaveActivity.class);
                 intent.putExtra("fave", "images");
                 startActivity(intent);
                 break;
             case R.id.button_fave_audio:
+                button_fave_audio.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+                button_fave_audio.setImageResource(R.drawable.audio);
                 intent = new Intent(getActivity(), FaveActivity.class);
                 intent.putExtra("fave", "audio");
                 startActivity(intent);
