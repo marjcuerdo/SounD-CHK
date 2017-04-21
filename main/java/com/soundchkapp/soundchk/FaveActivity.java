@@ -107,7 +107,7 @@ public class FaveActivity extends AppCompatActivity {
         //btn.setBackgroundColor(getResources().getColor(R.color.colorWhite));
         iv.setMinimumHeight(LinearLayout.LayoutParams.MATCH_PARENT);
         iv.setForegroundGravity(View.TEXT_ALIGNMENT_CENTER);
-        iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        iv.setScaleType(ImageView.ScaleType.FIT_START);
         iv.setBackgroundColor(getColor(R.color.colorBlack));
         //btn.setScaleType(ImageView.ScaleType.FIT_XY);
         //btn.setMaxHeight(750);

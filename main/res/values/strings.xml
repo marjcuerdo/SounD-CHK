@@ -10,7 +10,7 @@
     <string name="text_read_QR">Reading QR Code...</string>
     <string name="title_activity_story_page">StoryPageActivity</string>
 
-    <string name="read_more">".\nUnlock with QR Code to READ MORE\n."</string>
+    <string name="read_more">"Tap to Unlock with QR Code to READ MORE"</string>
 
     <string name="paxton_short_text">
         "Del Paxton - “All Day, Every Day, All Night”\n\n"

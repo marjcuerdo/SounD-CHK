@@ -15,6 +15,13 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.google.android.youtube.player.YouTubePlayer;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentManager;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
+import android.os.Handler;
 
 
 import android.content.Intent;
@@ -23,7 +30,8 @@ import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayer.Provider;
 import com.google.android.youtube.player.YouTubePlayerView;
 
@@ -34,16 +42,25 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.widget.ScrollView;
 import android.graphics.Point;
+import android.util.Log;
 
 
 import java.util.Objects;
 
-public class StoryPageActivity extends AppCompatActivity{
+public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     public Intent intent;
+
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
-    public String url_link = "1iEd1aVe7R0";
+
+    public boolean tracker = false;
+
+    public String url_link = "yQiIXCSHq3w";
+
+    YouTubePlayer mYoutubePlayer;
+    ImageButton button_change_vid;
+
     //final MediaPlayer mp = MediaPlayer.create(this, R.raw.samplesound);
 
     @Override
@@ -60,11 +77,18 @@ public class StoryPageActivity extends AppCompatActivity{
         final ImageButton iv1 = (ImageButton) findViewById(R.id.imglocked1);
         final ImageButton iv2 = (ImageButton) findViewById(R.id.imglocked2);
         final ImageButton iv3 = (ImageButton) findViewById(R.id.imglocked3);
-        final ImageButton iv4 = (ImageButton) findViewById(R.id.imglocked4);
-        final ImageButton iv5 = (ImageButton) findViewById(R.id.imglocked5);
-        final ImageButton iv6 = (ImageButton) findViewById(R.id.imglocked6);
+        //final ImageButton iv4 = (ImageButton) findViewById(R.id.imglocked4);
+        //final ImageButton iv5 = (ImageButton) findViewById(R.id.imglocked5);
+        //final ImageButton iv6 = (ImageButton) findViewById(R.id.imglocked6);
         final ImageButton button_scroll_down = (ImageButton) findViewById(R.id.button_scroll_down);
-        //youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+
+        //YouTubePlayerFragment youTubePlayerFragment = YouTubePlayerFragment.newInstance();
+        //youTubePlayerFragment.initialize(Config.YOUTUBE_API_KEY, this);
+        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+
+
+
 
         final Button scan_button = (Button)findViewById(R.id.scan_btn);
 
@@ -72,18 +96,55 @@ public class StoryPageActivity extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                //button.setBackgroundColor(Color.BLUE);
-                //TextView tv = (TextView)getView().findViewById(R.id.scan_instructions);
-                //tv.setVisibility(View.GONE);
-                //scan_button.setBackgroundResource(R.drawable.roundedbutton_clicked);
-                //button.setTextColor(Color.WHITE);
                 Intent intent = new Intent(getBaseContext(), CameraActivity.class);
                 startActivity(intent);
             }
         });
 
 
-        //youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+        button_change_vid = (ImageButton)findViewById(R.id.button_change_vid);
+
+
+
+
+        button_change_vid.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+
+                final Handler handler = new Handler();
+
+                button_change_vid.setImageResource(R.drawable.right_arrow);
+                button_change_vid.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //myButton.setBackgroundColor(Color.BLACK); //set the color to black
+                        button_change_vid.setImageResource(R.drawable.black_right_arrow);
+                        button_change_vid.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                    }
+                }, 150);
+
+
+                /*button_change_vid.setImageResource(R.drawable.right_arrow);
+                button_change_vid.setBackgroundColor(getResources().getColor(R.color.color_home_dark));*/
+                url_link = "JGwWNGJdvx8";
+
+                if(mYoutubePlayer!=null){
+                    mYoutubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+                    mYoutubePlayer.cueVideo(url_link);
+                }
+
+
+                //player.cueVideo(url_link);
+
+                //youTubeView.initialize(Config.YOUTUBE_API_KEY);
+                //Log.d("TAG", "LINK CHANGE");
+            }
+
+        });
 
         final SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = preferences1.edit();
@@ -99,9 +160,29 @@ public class StoryPageActivity extends AppCompatActivity{
                 /*intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
                 intent.putExtra("fullimg", "little1");
                 startActivity(intent);*/
-                ScrollView scrollView = (ScrollView)findViewById(R.id.scroll_view);
-                View targetView = findViewById(R.id.lockedtext);
-                scrollView.smoothScrollTo(0,targetView.getTop());
+
+                button_scroll_down.setImageResource(R.drawable.down_arrow);
+                button_scroll_down.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+
+                final Handler handler = new Handler();
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        ScrollView scrollView = (ScrollView)findViewById(R.id.scroll_view);
+                        View targetView = findViewById(R.id.lockedtext);
+                        scrollView.smoothScrollTo(0,targetView.getTop());
+                        //myButton.setBackgroundColor(Color.BLACK); //set the color to black
+                        button_scroll_down.setImageResource(R.drawable.black_down_arrow);
+                        button_scroll_down.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                    }
+                }, 200);
+
+
+                //ScrollView scrollView = (ScrollView)findViewById(R.id.scroll_view);
+                //View targetView = findViewById(R.id.lockedtext);
+                //scrollView.smoothScrollTo(0,targetView.getTop());
+
                 //targetView.getParent().requestChildFocus(targetView,targetView);
             }
         });
@@ -214,9 +295,9 @@ public class StoryPageActivity extends AppCompatActivity{
                     setSaveImgListeners(iv3, "griffs3", editor);
 
                     url4 = "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing";
-                    setSaveVidListeners(iv4, "griffs1", url4, editor);
-                    setSaveVidListeners(iv5, "griffs2", url4, editor);
-                    setSaveVidListeners(iv6, "griffs3", url4, editor);
+                    //setSaveVidListeners(iv4, "griffs1", url4, editor);
+                    //setSaveVidListeners(iv5, "griffs2", url4, editor);
+                    //setSaveVidListeners(iv6, "griffs3", url4, editor);
 
                     break;
 
@@ -596,38 +677,29 @@ public class StoryPageActivity extends AppCompatActivity{
             }
         });
     }
-
 /*
     @Override
-    public void onInitializationSuccess(Provider provider, YouTubePlayer player, boolean wasRestored) {
-        if (!wasRestored) {
-            player.setPlayerStyle(YouTubePlayer.PlayerStyle.MINIMAL);
-            player.setFullscreen(false);
-            player.setShowFullscreenButton(true);
-            player.cueVideo(url_link);
+    public void onResume() {
+        super.onResume();
+        button_change_vid.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+        button_change_vid.setImageResource(R.drawable.black_right_arrow);
+    }*/
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+        if (!b) {
+            youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+            youTubePlayer.cueVideo("VnCTSZcBI-0");
+            //Save reference of initialized player in class level attribute
+            mYoutubePlayer = youTubePlayer;
         }
+
     }
 
     @Override
-    public void onInitializationFailure(Provider provider, YouTubeInitializationResult errorReason) {
-        if (errorReason.isUserRecoverableError()) {
-            errorReason.getErrorDialog(this, RECOVERY_REQUEST).show();
-        } else {
-            String error = String.format(getString(R.string.player_error), errorReason.toString());
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-        }
-    }
+    public void onInitializationFailure (YouTubePlayer.Provider
+                                                 provider, YouTubeInitializationResult youTubeInitializationResult){
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RECOVERY_REQUEST) {
-            // Retry initialization if user performed a recovery action
-            getYouTubePlayerProvider().initialize(Config.YOUTUBE_API_KEY, this);
-        }
     }
-
-    protected Provider getYouTubePlayerProvider() {
-        return youTubeView;
-    }
-*/
 }
