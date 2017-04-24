@@ -112,7 +112,7 @@
                 android:textStyle="bold"
                 android:textAllCaps="false"
                 android:textSize="20sp"
-                android:background="@drawable/final_button_rosehip"
+                android:background="@drawable/final_button_rosehip_2"
                 android:layout_height="200dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"

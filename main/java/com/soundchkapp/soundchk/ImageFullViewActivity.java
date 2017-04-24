@@ -37,9 +37,47 @@ public class ImageFullViewActivity extends AppCompatActivity {
                         .into(fullImgView);
                 break;
 
+            case "griffs4":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3511.jpg?alt=media&token=979728d1-ce96-4e68-ad24-42b4f69dd991")
+                        //.load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638")
+                        .into(fullImgView);
+                break;
+
+            case "griffs5":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3569.jpg?alt=media&token=1b3b7a6d-ceed-4cd9-8b8a-c39604207450")
+                        //.load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638")
+                        .into(fullImgView);
+                break;
+
             case "juicy1":
                 Glide.with(this.getApplicationContext())
-                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a")
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3728.jpg?alt=media&token=4bfae885-54cc-46e8-bffe-50784d0fa157")
+                        .into(fullImgView);
+                break;
+
+            case "juicy2":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3750.jpg?alt=media&token=6b971eb0-6a1b-4215-a8cd-507b4c227534")
+                        .into(fullImgView);
+                break;
+
+            case "juicy3":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3777.jpg?alt=media&token=af405f11-daba-4ff2-9f36-9ee21aa17811")
+                        .into(fullImgView);
+                break;
+
+            case "juicy4":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3779.jpg?alt=media&token=b4bf7552-708b-4207-956f-18b7198d67af")
+                        .into(fullImgView);
+                break;
+
+            case "juicy5":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3801.jpg?alt=media&token=afbe6ee2-f57b-4d1d-97b5-74907498f0c7")
                         .into(fullImgView);
                 break;
 

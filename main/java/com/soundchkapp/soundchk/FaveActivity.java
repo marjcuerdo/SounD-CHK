@@ -79,13 +79,64 @@ public class FaveActivity extends AppCompatActivity {
                         }
                         addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266");
                     }
+                    if (preferences1.contains("storefaveimg_griffs4")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3511.jpg?alt=media&token=979728d1-ce96-4e68-ad24-42b4f69dd991");
+                    }
+                    if (preferences1.contains("storefaveimg_griffs5")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3569.jpg?alt=media&token=1b3b7a6d-ceed-4cd9-8b8a-c39604207450");
+                    }
+
                     if (preferences1.contains("storefaveimg_juicy1")) {
                         if (preferences1.contains("status")) {
                             editor.remove("status");
                             editor.commit();
                         }
-                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a");
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3728.jpg?alt=media&token=4bfae885-54cc-46e8-bffe-50784d0fa157");
                     }
+
+                    if (preferences1.contains("storefaveimg_juicy2")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3750.jpg?alt=media&token=6b971eb0-6a1b-4215-a8cd-507b4c227534");
+                    }
+
+                    if (preferences1.contains("storefaveimg_juicy3")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3777.jpg?alt=media&token=af405f11-daba-4ff2-9f36-9ee21aa17811");
+                    }
+
+                    if (preferences1.contains("storefaveimg_juicy4")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3779.jpg?alt=media&token=b4bf7552-708b-4207-956f-18b7198d67af");
+                    }
+
+                    if (preferences1.contains("storefaveimg_juicy5")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3801.jpg?alt=media&token=afbe6ee2-f57b-4d1d-97b5-74907498f0c7");
+                    }
+
+
+
+
                     if (preferences1.contains("status")) {
                         emptyMessage(container_faves);
                     }

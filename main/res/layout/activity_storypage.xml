@@ -111,6 +111,7 @@
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
+                    android:id="@+id/imglocked4"
                     android:src="@drawable/locked"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -119,6 +120,7 @@
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
+                    android:id="@+id/imglocked5"
                     android:src="@drawable/locked"/>
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -127,6 +129,7 @@
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
+                    android:id="@+id/imglocked6"
                     android:src="@drawable/locked"/>
             </LinearLayout>
         </HorizontalScrollView>
