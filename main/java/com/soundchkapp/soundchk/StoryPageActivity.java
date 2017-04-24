@@ -80,6 +80,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         final ImageButton iv4 = (ImageButton) findViewById(R.id.imglocked4);
         final ImageButton iv5 = (ImageButton) findViewById(R.id.imglocked5);
         final ImageButton iv6 = (ImageButton) findViewById(R.id.imglocked6);
+        final ImageButton iv7 = (ImageButton) findViewById(R.id.imglocked7);
+        final ImageButton iv8 = (ImageButton) findViewById(R.id.imglocked8);
+        final ImageButton iv9 = (ImageButton) findViewById(R.id.imglocked9);
+        final ImageButton iv10 = (ImageButton) findViewById(R.id.imglocked10);
+        final ImageButton iv11 = (ImageButton) findViewById(R.id.imglocked11);
+        final ImageButton iv12 = (ImageButton) findViewById(R.id.imglocked12);
         final ImageButton button_scroll_down = (ImageButton) findViewById(R.id.button_scroll_down);
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
@@ -331,6 +337,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                             .into(iv5);
 
                     iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
 
                     url4 = "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing";
                     //setSaveVidListeners(iv4, "griffs1", url4, editor);
@@ -339,7 +351,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     break;
 
-
+                // DONE!!
                 case "little":
                     toastFaveReminder();
                     lockedtext.setText("***UNLOCKED CONTENT***");
@@ -348,21 +360,39 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583")
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3621.jpg?alt=media&token=de197145-89b6-4ce2-9e08-65d20b40e258")
                             .into(iv1);
 
                     Glide.with(this.getApplicationContext())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583")
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3679.jpg?alt=media&token=63cfb305-108e-411c-afc3-386b770fef04")
                             .into(iv2);
 
                     Glide.with(this.getApplicationContext())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583")
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3686.jpg?alt=media&token=25029d12-79a9-48c6-90ad-4c2069190fe7")
                             .into(iv3);
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3691.jpg?alt=media&token=193b2470-313d-40c6-9a4e-e7ac0a66c95a")
+                            .into(iv4);
+
+                    iv5.setVisibility(View.GONE);
+                    iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
+
+                    setSaveImgListeners(iv1, "little1", editor);
+                    setSaveImgListeners(iv2, "little2", editor);
+                    setSaveImgListeners(iv3, "little3", editor);
+                    setSaveImgListeners(iv4, "little4", editor);
 
                     scan_button.setVisibility(View.GONE);
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.little_long_text);
 
+                    /*
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -413,11 +443,11 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                             Toast.makeText(getApplicationContext(), "Saved to favorites!", Toast.LENGTH_LONG).show();
                             return false;
                         }
-                    });
+                    });*/
 
                     break;
 
-
+                // DONE!!!
                 case "juicy":
                     toastFaveReminder();
 
@@ -448,6 +478,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                             .into(iv5);
 
                     iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
 
                     break;
 
@@ -572,6 +608,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     break;
 
+                // DONE!!!
                 case "artawake":
                     toastFaveReminder();
 
@@ -588,8 +625,60 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.artawake_long_text);
 
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/mon%20petit%20chou%201.JPG?alt=media&token=976b967f-4135-4263-b8cc-71118839f6fc")
+                            .into(iv1);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/mon%20petit%20chou%202.JPG?alt=media&token=45e28631-198e-49b1-9297-15686600f86d")
+                            .into(iv2);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/simba%20marimba%201.JPG?alt=media&token=02f1e10f-2527-4c5b-bf06-9b6dd4ddaf10")
+                            .into(iv3);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/simba%20marimba%202.JPG?alt=media&token=edd5fe12-00ff-4845-b14b-b9a9366a0134")
+                            .into(iv4);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/simba%20marimba%203.JPG?alt=media&token=f117879c-04c9-4176-b348-28fe7cf94d97")
+                            .into(iv5);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/tart%20vandelay%201.JPG?alt=media&token=4484dbb6-fc49-47b1-ab7d-456a198c6595")
+                            .into(iv6);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/tart%20vandelay%202.JPG?alt=media&token=dc12f924-2881-454e-9b03-f4b634c71972")
+                            .into(iv7);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/tart%20vandelay%203.JPG?alt=media&token=131fc03f-a923-425d-aadb-46941b6ce6f7")
+                            .into(iv8);
+
+
+                    setSaveImgListeners(iv1, "artawake1", editor);
+                    setSaveImgListeners(iv2, "artawake2", editor);
+                    setSaveImgListeners(iv3, "artawake3", editor);
+                    setSaveImgListeners(iv4, "artawake4", editor);
+                    setSaveImgListeners(iv5, "artawake5", editor);
+                    setSaveImgListeners(iv6, "artawake6", editor);
+                    setSaveImgListeners(iv7, "artawake7", editor);
+                    setSaveImgListeners(iv8, "artawake8", editor);
+
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
+
+
                     break;
 
+                // DONE!!!!
                 case "bugjar":
                     toastFaveReminder();
 
@@ -605,6 +694,71 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     scan_button.setVisibility(View.GONE);
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.bugjar_long_text);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Hip%201.JPG?alt=media&token=865a6b9d-afc4-4c3a-897e-7a97c373a4f4")
+                            .into(iv1);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Hip%202.JPG?alt=media&token=31d2354c-a0d2-41fb-9625-acf3c5a9e2d7")
+                            .into(iv2);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Hip%203.JPG?alt=media&token=da714dbe-8226-4a3b-8378-a6a420b0c793")
+                            .into(iv3);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Hip%204.JPG?alt=media&token=b77f1943-ecc8-4369-a65a-4ebdba9f44ae")
+                            .into(iv4);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Juicy%201.JPG?alt=media&token=0760c4ae-1cee-4453-8584-345f64ffc755")
+                            .into(iv5);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Juicy%202.JPG?alt=media&token=77cc85e0-ca24-4a4e-aca7-3957ca4a9830")
+                            .into(iv6);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Juicy%203.JPG?alt=media&token=b180f20b-e804-4d1f-b93d-ffe998a8f8d3")
+                            .into(iv7);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Juicy%204.JPG?alt=media&token=547a222c-3b8e-4c6d-b559-c67a1f263385")
+                            .into(iv8);
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%201.JPG?alt=media&token=5d9da18f-e244-470e-9bc7-1feb7facf262")
+                            .into(iv9);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%202.JPG?alt=media&token=0a8a9d5e-1708-4223-9d95-e2676b8a5fbe")
+                            .into(iv10);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%203.JPG?alt=media&token=f3a524e6-d801-452f-8d8d-247deb6a6dad")
+                            .into(iv11);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%204.JPG?alt=media&token=f600cde0-b3f5-46b5-89e1-0795b0db28aa")
+                            .into(iv12);
+
+                    setSaveImgListeners(iv1, "bugjar1", editor);
+                    setSaveImgListeners(iv2, "bugjar2", editor);
+                    setSaveImgListeners(iv3, "bugjar3", editor);
+                    setSaveImgListeners(iv4, "bugjar4", editor);
+                    setSaveImgListeners(iv5, "bugjar5", editor);
+                    setSaveImgListeners(iv6, "bugjar6", editor);
+                    setSaveImgListeners(iv7, "bugjar7", editor);
+                    setSaveImgListeners(iv8, "bugjar8", editor);
+                    setSaveImgListeners(iv9, "bugjar9", editor);
+                    setSaveImgListeners(iv10, "bugjar10", editor);
+                    setSaveImgListeners(iv11, "bugjar11", editor);
+                    setSaveImgListeners(iv12, "bugjar12", editor);
 
                     break;
 

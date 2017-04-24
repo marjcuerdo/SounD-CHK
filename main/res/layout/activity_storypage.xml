@@ -131,6 +131,60 @@
                     android:layout_margin="5dp"
                     android:id="@+id/imglocked6"
                     android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked7"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked8"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked9"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked10"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked11"
+                    android:src="@drawable/locked"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:background="@color/color_home_dark"
+                    android:layout_margin="5dp"
+                    android:id="@+id/imglocked12"
+                    android:src="@drawable/locked"/>
             </LinearLayout>
         </HorizontalScrollView>
         </LinearLayout>

@@ -25,7 +25,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
 
         // CHANGE URL TO DISPLAY DATE
         if (getIntent().getStringExtra("video").equals("intro")) {
-            url_link = "1iEd1aVe7R0";
+            url_link = "CQpAEGlRsVU";
             //url_link = "fhWaJi1Hsfo";
         } else {
             Log.d("TAG", getIntent().getStringExtra("video"));
@@ -44,10 +44,10 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
             player.setFullscreen(true);
 
             player.cueVideo(url_link);
-            /*
+/*
             if (getIntent().getStringExtra("video") == "intro") {
                 Log.d("TAG", "call worked");
-                //player.cueVideo("1iEd1aVe7R0");
+                player.cueVideo("CQpAEGlRsVU");
 
             } else {
                 //player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
