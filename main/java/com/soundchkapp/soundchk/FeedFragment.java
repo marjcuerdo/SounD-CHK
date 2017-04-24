@@ -68,10 +68,10 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
             button4.setTextColor(getResources().getColor(R.color.colorWhite));
             setButtonBg(R.id.button4, R.drawable.final_button_paxton);
         }
-        setButtonBgInitial(R.id.button5, R.drawable.final_button_rosehip);
+        setButtonBgInitial(R.id.button5, R.drawable.final_button_rosehip_2);
         if (preferences.contains("storemedia_rosehip")) {
             button5.setTextColor(getResources().getColor(R.color.colorWhite));
-            setButtonBg(R.id.button5, R.drawable.final_button_rosehip);
+            setButtonBg(R.id.button5, R.drawable.final_button_rosehip_2);
         }
         setButtonBgInitial(R.id.button6, R.drawable.final_button_wagoneer);
         if (preferences.contains("storemedia_wagoneer")) {
@@ -121,7 +121,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.button5:
-                openStoryPage("rosehip", preferences, R.id.button5, R.drawable.final_button_rosehip);
+                openStoryPage("rosehip", preferences, R.id.button5, R.drawable.final_button_rosehip_2);
                 button5.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
                 button5.setAlpha(1);
                 break;

@@ -62,11 +62,7 @@
             android:gravity="start"
             android:background="@color/colorGrey"
             android:orientation="horizontal">
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:src="@drawable/images"/>
+
 
 
         <HorizontalScrollView
@@ -138,46 +134,39 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:weightSum="7"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:background="@color/colorGrey">
-
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-
-                android:layout_gravity="center"
-                android:src="@drawable/video"/>
 
             <!--<com.google.android.youtube.player.YouTubePlayerView
                 android:id="@+id/youtube_view"
                 android:layout_width="275dp"
                 android:layout_height="250dp"/>-->
-            
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_change_vid_prev"
+                android:layout_gravity="center"
+                android:src="@drawable/black_left_arrow"
+                android:background="@color/colorWhiteBg"
+                android:layout_height="match_parent"/>
+
             <com.google.android.youtube.player.YouTubePlayerView
-                android:layout_width="275dp"
+                android:layout_width="0dp"
+                android:layout_weight="5"
                 android:layout_height="250dp"
                 android:id="@+id/youtube_view" />
 
             <ImageButton
-                android:layout_width="40dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:id="@+id/button_change_vid"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/button_change_vid_next"
                 android:layout_gravity="center"
                 android:src="@drawable/black_right_arrow"
                 android:background="@color/colorWhiteBg"
-                android:layout_height="100dp"/>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
-                    android:id="@+id/extra_locked_holder"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    android:background="@color/colorBlack">
-                </LinearLayout>
+                android:layout_height="match_parent"/>
 
         </LinearLayout>
 

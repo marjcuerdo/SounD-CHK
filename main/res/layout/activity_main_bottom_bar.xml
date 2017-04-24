@@ -6,6 +6,7 @@
                   android:id="@+id/activity_main"
                   android:layout_width="match_parent"
                   android:layout_height="match_parent"
+              android:background="@color/colorBlack"
                   android:orientation="vertical"
                   tools:context="com.soundchkapp.soundchk.MainActivityBottomBar">
 
@@ -13,7 +14,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@drawable/header"
+        android:background="@drawable/banner_final"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />

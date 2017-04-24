@@ -59,7 +59,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
     public String url_link = "yQiIXCSHq3w";
 
     YouTubePlayer mYoutubePlayer;
-    ImageButton button_change_vid;
+    ImageButton button_change_vid_next, button_change_vid_prev;
 
     //final MediaPlayer mp = MediaPlayer.create(this, R.raw.samplesound);
 
@@ -73,7 +73,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         TextView storyfree = (TextView) findViewById(R.id.story_free);
         TextView story_locked = (TextView) findViewById(R.id.story_locked);
         LinearLayout locked_holder = (LinearLayout) findViewById(R.id.locked_holder);
-        LinearLayout locked_holder2 = (LinearLayout) findViewById(R.id.extra_locked_holder);
+        //LinearLayout locked_holder2 = (LinearLayout) findViewById(R.id.extra_locked_holder);
         final ImageButton iv1 = (ImageButton) findViewById(R.id.imglocked1);
         final ImageButton iv2 = (ImageButton) findViewById(R.id.imglocked2);
         final ImageButton iv3 = (ImageButton) findViewById(R.id.imglocked3);
@@ -102,12 +102,11 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         });
 
 
-        button_change_vid = (ImageButton)findViewById(R.id.button_change_vid);
+        button_change_vid_next = (ImageButton)findViewById(R.id.button_change_vid_next);
+        button_change_vid_prev = (ImageButton)findViewById(R.id.button_change_vid_prev);
 
 
-
-
-        button_change_vid.setOnClickListener(new View.OnClickListener() {
+        button_change_vid_next.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -115,22 +114,20 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                 final Handler handler = new Handler();
 
-                button_change_vid.setImageResource(R.drawable.right_arrow);
-                button_change_vid.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+                button_change_vid_next.setImageResource(R.drawable.right_arrow);
+                button_change_vid_next.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
 
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //myButton.setBackgroundColor(Color.BLACK); //set the color to black
-                        button_change_vid.setImageResource(R.drawable.black_right_arrow);
-                        button_change_vid.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                        button_change_vid_next.setImageResource(R.drawable.black_right_arrow);
+                        button_change_vid_next.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
                     }
                 }, 150);
 
 
-                /*button_change_vid.setImageResource(R.drawable.right_arrow);
-                button_change_vid.setBackgroundColor(getResources().getColor(R.color.color_home_dark));*/
-                url_link = "JGwWNGJdvx8";
+                url_link = "yQiIXCSHq3w";
 
                 if(mYoutubePlayer!=null){
                     mYoutubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
@@ -138,13 +135,35 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 }
 
 
-                //player.cueVideo(url_link);
-
-                //youTubeView.initialize(Config.YOUTUBE_API_KEY);
-                //Log.d("TAG", "LINK CHANGE");
             }
 
         });
+
+        button_change_vid_prev.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                final Handler handler = new Handler();
+
+                button_change_vid_prev.setImageResource(R.drawable.left_arrow);
+                button_change_vid_prev.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //myButton.setBackgroundColor(Color.BLACK); //set the color to black
+                        button_change_vid_prev.setImageResource(R.drawable.black_left_arrow);
+                        button_change_vid_prev.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                    }
+                }, 150);
+            }
+
+
+        });
+
+
+        //////////
+
 
         final SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         final SharedPreferences.Editor editor = preferences1.edit();
@@ -199,7 +218,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
 
-                setLockedStoryPage(tv, R.drawable.final_story_griffs, R.string.dr_griffs_title_text, storyfree, R.string.short_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_griffs_2, R.string.dr_griffs_title_text, storyfree, R.string.griffs_short_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -209,7 +228,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
-                //setLockedStoryPage(tv, R.drawable.final_story_little, R.string.text_the_little_box, iv1, iv2, iv3, "little", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_little, R.string.text_the_little_box, storyfree, R.string.little_short_text, iv1, iv2, iv3, "little", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -218,7 +237,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
 
-                //setLockedStoryPage(tv, R.drawable.final_story_juicy, R.string.title_juicy_connotation, iv1, iv2, iv3, "juicy", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_juicy_2, R.string.title_juicy_connotation, storyfree, R.string.juicy_short_text, iv1, iv2, iv3, "juicy", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -266,7 +285,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
 
-                setLockedStoryPage(tv, R.drawable.final_story_bugjar, R.string.title_bugjar, storyfree, R.string.bugjar_short_text, iv1, iv2, iv3, "bugjar", url1, url2, url3, locked_holder);
+                setLockedStoryPage(tv, R.drawable.final_story_bugjar_2, R.string.title_bugjar, storyfree, R.string.bugjar_short_text, iv1, iv2, iv3, "bugjar", url1, url2, url3, locked_holder);
 
                 break;
 
@@ -288,11 +307,15 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     scan_button.setVisibility(View.GONE);
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     setSaveImgListeners(iv1, "griffs1", editor);
                     setSaveImgListeners(iv2, "griffs2", editor);
                     setSaveImgListeners(iv3, "griffs3", editor);
+
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.griffs_long_text);
+
 
                     url4 = "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing";
                     //setSaveVidListeners(iv4, "griffs1", url4, editor);
@@ -321,7 +344,9 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                             .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583")
                             .into(iv3);
 
+                    scan_button.setVisibility(View.GONE);
                     story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.little_long_text);
 
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -385,11 +410,15 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
                     url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a";
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     setSaveImgListeners(iv1, "juicy1", editor);
                     setSaveImgListeners(iv2, "juicy1", editor);
                     setSaveImgListeners(iv3, "juicy1", editor);
+
+                    scan_button.setVisibility(View.GONE);
+                    story_locked.setVisibility(View.VISIBLE);
+                    story_locked.setText(R.string.juicy_long_text);
 
                     break;
 
@@ -402,7 +431,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_paxton);
                     tv.setText(R.string.del_paxton);
@@ -420,7 +449,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_rosehip);
                     tv.setText(R.string.title_rosehip);
@@ -503,7 +532,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_wagoneer);
                     tv.setText(R.string.title_wagoneer);
@@ -521,7 +550,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_artawake);
                     tv.setText("Art Awake 2017");
@@ -539,7 +568,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
-                    setUnlockedStoryPage(lockedtext, locked_holder, locked_holder2, url1, iv1, url2, iv2, url3, iv3, story_locked);
+                    setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_bugjar);
                     tv.setText(R.string.title_bugjar);
@@ -600,12 +629,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         }
     }
 
-    public void setUnlockedStoryPage(TextView unlockNotifyTxt, LinearLayout holder1, LinearLayout holder2, String imgUrl1, ImageButton iv1, String imgUrl2, ImageButton iv2, String imgUrl3, ImageButton iv3, TextView storyTxt) {
+    public void setUnlockedStoryPage(TextView unlockNotifyTxt, LinearLayout holder1, String imgUrl1, ImageButton iv1, String imgUrl2, ImageButton iv2, String imgUrl3, ImageButton iv3, TextView storyTxt) {
         unlockNotifyTxt.setText("***UNLOCKED CONTENT***");
         unlockNotifyTxt.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
         holder1.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
-        holder2.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
-        holder2.setVisibility(View.VISIBLE);
+        //holder2.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+        //holder2.setVisibility(View.VISIBLE);
 
         Glide.with(this.getApplicationContext())
                 //.using(new FirebaseImageLoader())
@@ -690,11 +719,26 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
         if (!b) {
             youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-            youTubePlayer.cueVideo("VnCTSZcBI-0");
+            youTubePlayer.cueVideo("WRmEgfJ1RIM");
             //Save reference of initialized player in class level attribute
             mYoutubePlayer = youTubePlayer;
         }
 
+    }
+
+    // create playlist for videos
+    public String displayVideos() {
+
+        if (getIntent().getStringExtra("locked") != null) {
+            switch (getIntent().getStringExtra("locked")) {
+                case "griffs":
+
+
+
+            }
+        }
+
+        return url_link;
     }
 
     @Override
