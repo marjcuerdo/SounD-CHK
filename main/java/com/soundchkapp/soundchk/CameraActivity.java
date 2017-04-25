@@ -79,6 +79,7 @@ public class CameraActivity extends AppCompatActivity {
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "griffs");
                         intent.putExtra("locked", "griffs");
+                        intent.putExtra("video", "griffs");
                         finish();
                         startActivity(intent);
 
@@ -96,6 +97,7 @@ public class CameraActivity extends AppCompatActivity {
                         Log.d("TAG", "little working");
                         intent.putExtra("unlocked", "little");
                         intent.putExtra("locked", "little");
+                        intent.putExtra("video", "little");
                         finish();
                         startActivity(intent);
 
@@ -112,6 +114,7 @@ public class CameraActivity extends AppCompatActivity {
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "juicy");
                         intent.putExtra("locked", "juicy");
+                        intent.putExtra("video", "juicy");
                         finish();
                         startActivity(intent);
 
@@ -178,6 +181,7 @@ public class CameraActivity extends AppCompatActivity {
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "artawake");
                         intent.putExtra("locked", "artawake");
+                        intent.putExtra("video", "artawake");
                         finish();
                         startActivity(intent);
 
@@ -194,6 +198,7 @@ public class CameraActivity extends AppCompatActivity {
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "bugjar");
                         intent.putExtra("locked", "bugjar");
+                        intent.putExtra("video", "bugjar");
                         finish();
                         startActivity(intent);
 

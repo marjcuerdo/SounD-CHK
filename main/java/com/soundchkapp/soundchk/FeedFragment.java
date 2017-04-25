@@ -154,6 +154,7 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
 
         if (name1.equals(name)) {
             intent.putExtra("locked", name);
+            intent.putExtra("video", name);
             getView().findViewById(buttonId).setBackground(getResources().getDrawable(drawableId));
         }
         startActivity(intent);
