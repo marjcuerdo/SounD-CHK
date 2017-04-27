@@ -3,24 +3,36 @@ package com.soundchkapp.soundchk;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import com.bumptech.glide.Glide;
 
 public class ImageFullViewActivity extends AppCompatActivity {
+
+    Bitmap current_image = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_full_view);
 
-        ImageView fullImgView = (ImageView) findViewById(R.id.fullImgView);
+        final ImageView fullImgView = (ImageView) findViewById(R.id.fullImgView);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.button_share);
+
+
 
         switch (getIntent().getStringExtra("fullimg")) {
+
             case "griffs1":
                 Glide.with(this.getApplicationContext())
                         .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/Chess%20final.png?alt=media&token=5accd9df-1911-4cda-83f5-9f1b63c9dca7")
                         .into(fullImgView);
+                current_image = fullImgView.getDrawingCache();
                 break;
 
             case "griffs2":
@@ -232,5 +244,31 @@ public class ImageFullViewActivity extends AppCompatActivity {
 
 
         }
+
+/*
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //Bitmap image = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+                //String message = "Text I want to share.";
+                Intent share = new Intent(Intent.ACTION_SEND);
+                share.setType("text/plain");
+                share.putExtra(Intent.EXTRA_TEXT, current_image);
+
+                SharePhoto photo = new SharePhoto.Builder()
+                        .setBitmap(image)
+                        .setCaption("Give me my codez or I will ... you know, do that thing you don't like!")
+                        .build();
+
+                SharePhotoContent content = new SharePhotoContent.Builder()
+                        .addPhoto(photo)
+                        .build();
+
+                ShareApi.share(content, null);
+
+                startActivity(Intent.createChooser(share, "Title of the dialog the system will open"));
+            }
+        }); */
     }
 }

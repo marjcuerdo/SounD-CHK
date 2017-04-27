@@ -15,7 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:weightSum="10"
+            android:weightSum="15"
             android:orientation="vertical"
             android:background="@color/colorBlack"
             android:paddingBottom="0dp"
@@ -25,7 +25,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="8.75"
+                android:layout_weight="13"
                 android:gravity="bottom|left"
                 android:maxHeight="600dp"
                 android:minHeight="600dp"
@@ -40,7 +40,7 @@
             <ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1.25"
+                android:layout_weight="2"
                 android:src="@drawable/down_button1"
                 android:scaleType="centerInside"
                 android:background="@color/colorWhiteBg"
@@ -81,7 +81,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitXY"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/locked"
                     android:background="@color/color_home_dark"
@@ -90,7 +90,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/locked"
                     android:background="@color/color_home_dark"
@@ -99,7 +99,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:src="@drawable/locked"
                     android:background="@color/color_home_dark"
@@ -108,7 +108,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -117,7 +117,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -126,7 +126,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -135,7 +135,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -144,7 +144,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -153,7 +153,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -162,7 +162,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -171,7 +171,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -180,7 +180,7 @@
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="200dp"
-                    android:scaleType="fitCenter"
+                    android:scaleType="center"
                     android:adjustViewBounds="true"
                     android:background="@color/color_home_dark"
                     android:layout_margin="5dp"
@@ -196,7 +196,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:id="@+id/vid_holder"
-            android:background="@color/colorGrey">
+            android:background="@color/colorBlack">
 
             <!--<com.google.android.youtube.player.YouTubePlayerView
                 android:id="@+id/youtube_view"
@@ -212,10 +212,18 @@
                 android:background="@color/colorWhiteBg"
                 android:layout_height="75dp"/>
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:layout_weight="8"
+                android:id="@+id/img_screenshot"
+                android:src="@drawable/locked"/>
+
             <com.google.android.youtube.player.YouTubePlayerView
                 android:layout_width="0dp"
                 android:layout_weight="8"
                 android:layout_height="300dp"
+                android:visibility="gone"
                 android:id="@+id/youtube_view" />
 
             <ImageButton

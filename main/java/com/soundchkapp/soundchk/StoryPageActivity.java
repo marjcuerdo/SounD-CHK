@@ -76,6 +76,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         final ImageButton button_scroll_down = (ImageButton) findViewById(R.id.button_scroll_down);
         final LinearLayout fave_button_holder = (LinearLayout) findViewById(R.id.fave_button_holder);
         final ImageButton button_fave = (ImageButton) findViewById(R.id.button_fave);
+        ImageView img_screenshot = (ImageView) findViewById(R.id.img_screenshot);
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
 
@@ -281,6 +282,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/Chess%20final.png?alt=media&token=5accd9df-1911-4cda-83f5-9f1b63c9dca7";
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
+                img_screenshot.setImageResource(R.drawable.shot_griffs);
 
                 setLockedStoryPage(tv, R.drawable.final_story_griffs_2, R.string.dr_griffs_title_text, storyfree, R.string.griffs_short_text, iv1, iv2, iv3, "griffs", url1, url2, url3, locked_holder);
 
@@ -292,6 +294,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
+                img_screenshot.setImageResource(R.drawable.shot_little);
+
                 setLockedStoryPage(tv, R.drawable.final_story_little, R.string.text_the_little_box, storyfree, R.string.little_short_text, iv1, iv2, iv3, "little", url1, url2, url3, locked_holder);
 
                 break;
@@ -300,6 +304,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
+
+                img_screenshot.setImageResource(R.drawable.shot_juicy);
 
                 setLockedStoryPage(tv, R.drawable.final_story_juicy_2, R.string.title_juicy_connotation, storyfree, R.string.juicy_short_text, iv1, iv2, iv3, "juicy", url1, url2, url3, locked_holder);
 
@@ -310,6 +316,10 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
+                img_screenshot.setVisibility(View.GONE);
+
+                button_change_vid_next.setVisibility(View.GONE);
+
                 setLockedStoryPage(tv, R.drawable.final_story_paxton, R.string.del_paxton, storyfree, R.string.paxton_short_text, iv1, iv2, iv3, "paxton", url1, url2, url3, locked_holder);
 
                 break;
@@ -319,6 +329,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9";
 
+                img_screenshot.setVisibility(View.GONE);
+                button_change_vid_next.setVisibility(View.GONE);
                 setLockedStoryPage(tv, R.drawable.final_story_rosehip, R.string.title_rosehip, storyfree, R.string.rosehip_short_text, iv1, iv2, iv3, "rosehip", url1, url2, url3, locked_holder);
 
                 tv.setBackgroundResource(R.drawable.final_story_rosehip);
@@ -331,6 +343,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583";
 
+                img_screenshot.setVisibility(View.GONE);
+                button_change_vid_next.setVisibility(View.GONE);
                 setLockedStoryPage(tv, R.drawable.wagon, R.string.title_wagoneer, storyfree, R.string.wagoneer_short_text, iv1, iv2, iv3, "wagoneer", url1, url2, url3, locked_holder);
 
                 break;
@@ -340,6 +354,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
 
+                img_screenshot.setImageResource(R.drawable.shot_artawake);
+
                 setLockedStoryPage(tv, R.drawable.final_story_artawake, R.string.title_artawake, storyfree, R.string.artawake_short_text, iv1, iv2, iv3, "artawake", url1, url2, url3, locked_holder);
 
                 break;
@@ -348,6 +364,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
                 url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64";
+
+                img_screenshot.setImageResource(R.drawable.shot_bugjar);
 
                 setLockedStoryPage(tv, R.drawable.final_story_bugjar_2, R.string.title_bugjar, storyfree, R.string.bugjar_short_text, iv1, iv2, iv3, "bugjar", url1, url2, url3, locked_holder);
 
@@ -371,6 +389,9 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     button_fave.setVisibility(View.VISIBLE);
                     button_change_vid_next.setVisibility(View.GONE);
+
+                    img_screenshot.setVisibility(View.GONE);
+                    youTubeView.setVisibility(View.VISIBLE);
 
                     youTubeView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
 
@@ -419,7 +440,9 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
+                    img_screenshot.setVisibility(View.GONE);
                     button_fave.setVisibility(View.VISIBLE);
+                    youTubeView.setVisibility(View.VISIBLE);
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
@@ -470,7 +493,9 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3750.jpg?alt=media&token=6b971eb0-6a1b-4215-a8cd-507b4c227534";
                     url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3777.jpg?alt=media&token=af405f11-daba-4ff2-9f36-9ee21aa17811";
 
+                    img_screenshot.setVisibility(View.GONE);
                     button_change_vid_next.setVisibility(View.GONE);
+                    youTubeView.setVisibility(View.VISIBLE);
 
                     youTubeView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
 
@@ -516,6 +541,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     tv.setBackgroundResource(R.drawable.final_story_paxton);
                     tv.setText(R.string.del_paxton);
 
+                    button_change_vid_next.setVisibility(View.GONE);
+                    img_screenshot.setVisibility(View.GONE);
                     fave_button_holder.setVisibility(View.GONE);
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
@@ -573,6 +600,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
+                    img_screenshot.setVisibility(View.GONE);
+                    button_change_vid_next.setVisibility(View.GONE);
                     fave_button_holder.setVisibility(View.GONE);
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
@@ -625,6 +654,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
+                    button_change_vid_next.setVisibility(View.GONE);
+                    img_screenshot.setVisibility(View.GONE);
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
                     fave_button_holder.setVisibility(View.GONE);
                     tv.setBackgroundResource(R.drawable.final_story_wagoneer);
@@ -674,12 +705,14 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 // DONE!!!
                 case "artawake":
                     toastFaveReminder();
+                    youTubeView.setVisibility(View.VISIBLE);
                     button_fave.setVisibility(View.VISIBLE);
 
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
+                    img_screenshot.setVisibility(View.GONE);
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_artawake);
@@ -750,12 +783,14 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     toastFaveReminder();
 
                     button_fave.setVisibility(View.VISIBLE);
+                    youTubeView.setVisibility(View.VISIBLE);
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
+                    img_screenshot.setVisibility(View.GONE);
                     tv.setBackgroundResource(R.drawable.final_story_bugjar);
                     tv.setText(R.string.title_bugjar);
 
@@ -865,9 +900,9 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         tv.setText(titleId);
         tv.setAllCaps(true);
         tvStoryFree.setText(stringId);
-        iv1.setScaleType(ImageView.ScaleType.FIT_XY);
-        iv2.setScaleType(ImageView.ScaleType.FIT_XY);
-        iv3.setScaleType(ImageView.ScaleType.FIT_XY);
+        /*iv1.setScaleType(ImageView.ScaleType.CENTER);
+        iv2.setScaleType(ImageView.ScaleType.CENTER);
+        iv3.setScaleType(ImageView.ScaleType.CENTER);*/
 
         if (Objects.equals(getIntent().getStringExtra("locked"), name)) {
             Glide.with(this.getApplicationContext())
@@ -961,6 +996,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
         if (!b) {
             youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+
+            //youTubePlayer.setShowFullscreenButton(true);
 
 
             //Log.d("TAG", url_link);

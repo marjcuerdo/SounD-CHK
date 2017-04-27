@@ -44,9 +44,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:titleTextColor="@color/colorBlack"
-        design:itemTextColor="@color/colorWhite"
+        design:itemTextColor="@drawable/selector"
         design:itemBackground="@color/colorGrey"
-        design:itemIconTint="@color/colorWhiteBg"
+        design:itemIconTint="@drawable/selector"
         android:background="@color/colorGrey"
         design:menu="@menu/menu" />
 
