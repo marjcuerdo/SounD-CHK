@@ -2,8 +2,6 @@ package com.soundchkapp.soundchk;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,22 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.FileDownloadTask;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import android.support.annotation.NonNull;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.io.File;
-import java.io.IOException;
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by marjorieanncuerdo on 11/16/16.
@@ -48,7 +32,6 @@ public class CameraFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                //button.setBackgroundColor(Color.BLUE);
                 TextView tv = (TextView)getView().findViewById(R.id.scan_instructions);
                 tv.setVisibility(View.GONE);
                 button.setBackgroundResource(R.drawable.roundedbutton_clicked);
@@ -64,7 +47,6 @@ public class CameraFragment extends Fragment {
         button_intro_vid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=1iEd1aVe7R0&feature=youtu.be"));
                 Intent intent = new Intent(getActivity(), VideoActivity.class);
                 intent.putExtra("video", "intro");
                 startActivity(intent);
@@ -81,6 +63,16 @@ public class CameraFragment extends Fragment {
 
         button.setBackgroundResource(R.drawable.roundedbutton);
         button.setTextColor(getResources().getColor(R.color.colorBlack));
+    }
+
+    ////
+    public static CameraFragment newInstance(int page, String title) {
+        CameraFragment fragmentSecond = new CameraFragment();
+        Bundle args = new Bundle();
+        args.putInt("someInt", page);
+        args.putString("someTitle", title);
+        fragmentSecond.setArguments(args);
+        return fragmentSecond;
     }
 
 }

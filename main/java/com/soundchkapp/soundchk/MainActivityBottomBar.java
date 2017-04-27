@@ -1,20 +1,20 @@
 package com.soundchkapp.soundchk;
 
-import android.content.res.ColorStateList;
-import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
+import android.graphics.PorterDuff;
 
+//public class MainActivityBottomBar extends AppCompatActivity {
 public class MainActivityBottomBar extends AppCompatActivity {
 
     private static final String SELECTED_ITEM = "arg_selected_item";
@@ -22,6 +22,88 @@ public class MainActivityBottomBar extends AppCompatActivity {
     private BottomNavigationView mBottomNav;
     private int mSelectedItem;
 
+    FragmentPagerAdapter adapterViewPager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main_bottom_bar);
+
+        final ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
+        mBottomNav = (BottomNavigationView) findViewById(R.id.navigation);
+        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
+        vpPager.setAdapter(adapterViewPager);
+        boolean feed, cam, fave;
+        feed = false;
+        cam = false;
+        fave = false;
+
+        //mBottomNav.getMenu().getItem(0).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+        //mBottomNav.getMenu().getItem(1).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+        //mBottomNav.getMenu().getItem(2).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+
+        mBottomNav.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.menu_home:
+                                vpPager.setCurrentItem(0);
+                                //mBottomNav.getMenu().getItem(0).getIcon().setColorFilter(getResources().getColor(R.color.colorWhiteBg), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(1).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(2).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                return true;
+                                //break;
+                            case R.id.menu_camera:
+                                vpPager.setCurrentItem(1);
+                                //mBottomNav.getMenu().getItem(0).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(1).getIcon().setColorFilter(getResources().getColor(R.color.colorWhiteBg), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(2).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                return true;
+                                //break;
+                            case R.id.menu_favorites:
+                                vpPager.setCurrentItem(2);
+                                //mBottomNav.getMenu().getItem(0).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(1).getIcon().setColorFilter(getResources().getColor(R.color.color_home_dark), PorterDuff.Mode.SRC_IN);
+                                //mBottomNav.getMenu().getItem(2).getIcon().setColorFilter(getResources().getColor(R.color.colorWhiteBg), PorterDuff.Mode.SRC_IN);
+                                return true;
+                                //break;
+                        }
+                        return false;
+                    }
+                });
+
+
+        vpPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                mBottomNav.getMenu().getItem(position).setChecked(true);
+
+
+                mSelectedItem = mBottomNav.getMenu().getItem(position).getItemId();
+                //mBottomNav.getMenu().getItem(position).getIcon().setColorFilter(getColor(R.color.colorWhiteBg), PorterDuff.Mode.SRC_IN);
+
+                // uncheck the other items.
+                for (int i = 0; i< mBottomNav.getMenu().size(); i++) {
+                    MenuItem menuItem = mBottomNav.getMenu().getItem(i);
+                    menuItem.setChecked(menuItem.getItemId() == mSelectedItem);
+                }
+                /**/
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+/*
 
 
     @Override
@@ -118,7 +200,51 @@ public class MainActivityBottomBar extends AppCompatActivity {
         }
     }
 
-    private int getColorFromRes(@ColorRes int resId) {
-        return ContextCompat.getColor(this, resId);
+*/
+    // EXTRA STUFF --------
+
+    public static class MyPagerAdapter extends FragmentPagerAdapter {
+        private static int NUM_ITEMS = 3;
+
+        public MyPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager);
+        }
+
+        // Returns total number of pages
+        @Override
+        public int getCount() {
+            return NUM_ITEMS;
+        }
+
+        // Returns the fragment to display for that page
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0: // Fragment # 0 - This will show FirstFragment
+                    return FeedFragment.newInstance(0, "Page # 1");
+                case 1: // Fragment # 0 - This will show FirstFragment different title
+                    return CameraFragment.newInstance(1, "Page # 2");
+                case 2: // Fragment # 1 - This will show SecondFragment
+                    return FaveFragment.newInstance(2, "Page # 3");
+                default:
+                    return null;
+            }
+        }
+
+        // Returns the page title for the top indicator
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "Page " + position;
+        }
+
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putInt(SELECTED_ITEM, mSelectedItem);
+        super.onSaveInstanceState(outState);
+    }
+
+
+
 }

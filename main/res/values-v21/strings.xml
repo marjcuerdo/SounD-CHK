@@ -12,4 +12,5 @@
     <string name="title_wagoneer">Grand Wagoneer</string>
     <string name="title_artawake">Art Awake 2017</string>
     <string name="title_bugjar">Bugjar</string>
+    <string name="scroll"><![CDATA[<---------------------------------------->]]></string>
 </resources>

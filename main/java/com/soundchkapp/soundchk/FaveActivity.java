@@ -1,13 +1,10 @@
 package com.soundchkapp.soundchk;
 
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.net.Uri;
+import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -18,11 +15,34 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.google.android.youtube.player.YouTubeBaseActivity;
+import com.google.android.youtube.player.YouTubeInitializationResult;
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 
-import android.support.v7.app.ActionBar.LayoutParams;
+import java.util.ArrayList;
 
-public class FaveActivity extends AppCompatActivity {
+public class FaveActivity extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
+
+    String url_link = "";
+    private YouTubePlayerView youTubeView;
+    YouTubePlayer mYoutubePlayer;
+    StoryPageActivity sp = new StoryPageActivity();
+    ImageButton button_change_vid_next;
+    public ArrayList<String> saved_vid_urls = new ArrayList<>();
+
+    int count = 0;
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        View decorView = getWindow().getDecorView();
+        if (hasFocus) {
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,30 +53,140 @@ public class FaveActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences1.edit();
 
         LinearLayout container_faves = (LinearLayout) findViewById(R.id.container_faves);
-        //LinearLayout container_parent = (LinearLayout) findViewById(R.id.container_parent);
-        //ImageButton btnGreen = new ImageButton(this);
+        LinearLayout vid_holder = (LinearLayout) findViewById(R.id.vid_holder);
+
+        vid_holder.setVisibility(View.GONE);
+
+        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+
+        button_change_vid_next = (ImageButton)findViewById(R.id.button_change_vid_next);
 
             switch (getIntent().getStringExtra("fave")) {
                 case "vids":
-                    if (preferences1.contains("storefavevid_griffs1")) {
+                    if (preferences1.contains("storefavevid_griffs")) {
+                        vid_holder.setVisibility(View.VISIBLE);
                         editor.remove("status");
                         editor.commit();
-                        addSavedVid(container_faves, "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing");
+                        url_link = preferences1.getString("storefavevid_griffs", "Uv1sFdhYDDI");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
                     }
-                    if (preferences1.contains("storefavevid_griffs2")) {
+                    if (preferences1.contains("storefavevid_juicy")) {
+                        vid_holder.setVisibility(View.VISIBLE);
                         editor.remove("status");
                         editor.commit();
-                        addSavedVid(container_faves, "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing");
+                        url_link = preferences1.getString("storefavevid_juicy", "CI0ykNQFF4w");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
                     }
-                    if (preferences1.contains("storefavevid_griffs3")) {
+                    if (preferences1.contains("storefavevid_artawake1")) {
+                        vid_holder.setVisibility(View.VISIBLE);
                         editor.remove("status");
                         editor.commit();
-                        addSavedVid(container_faves, "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing");
+                        url_link = preferences1.getString("storefavevid_artawake1", "j457IfKBlFg");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
                     }
+                    if (preferences1.contains("storefavevid_artawake2")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_artawake2", "hFYIqk0uPyQ");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+                    if (preferences1.contains("storefavevid_bugjar1")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_bugjar1", "3anzbMIUwcA");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+                    if (preferences1.contains("storefavevid_bugjar2")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_bugjar2", "QWbt_8YPGOQ");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+                    if (preferences1.contains("storefavevid_little1")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_little1", "Jbd3MLbHgXs");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+                    if (preferences1.contains("storefavevid_little2")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_little2", "0jYboXw13II");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+                    if (preferences1.contains("storefavevid_little3")) {
+                        vid_holder.setVisibility(View.VISIBLE);
+                        editor.remove("status");
+                        editor.commit();
+                        url_link = preferences1.getString("storefavevid_little3", "zCDkvJaqRT8");
+                        saved_vid_urls.add(url_link);
+                        youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+                    }
+
+
+
+                    Log.d("SAVEDVID", saved_vid_urls.toString());
+                    count = saved_vid_urls.size();
+                    button_change_vid_next.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final Handler handler = new Handler();
+
+                            button_change_vid_next.setImageResource(R.drawable.right_arrow);
+                            button_change_vid_next.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    //myButton.setBackgroundColor(Color.BLACK); //set the color to black
+                                    button_change_vid_next.setImageResource(R.drawable.black_right_arrow);
+                                    button_change_vid_next.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                                }
+                            }, 150);
+
+
+                            Log.d("SAVEDVID", "size of: " + count);
+
+
+                            if (count > 1) {
+
+                                count = count - 1;
+                                url_link = saved_vid_urls.get(count-1);
+                            } else if (count == 1) {
+                                count = saved_vid_urls.size();
+                                url_link = saved_vid_urls.get(count-1);
+                            } else {
+                            }
+
+                            if(mYoutubePlayer!=null){
+                                mYoutubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+                                mYoutubePlayer.cueVideo(url_link);
+                            }
+
+                        }
+                    });
                     if (preferences1.contains("status")) {
                         emptyMessage(container_faves);
+                    } else {
+
+
                     }
                     break;
+
+
                 case "images":
                     if (preferences1.contains("storefaveimg_griffs1")) {
                         if (preferences1.contains("status")) {
@@ -317,6 +447,28 @@ public class FaveActivity extends AppCompatActivity {
                         addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%204.JPG?alt=media&token=f600cde0-b3f5-46b5-89e1-0795b0db28aa");
                     }
 
+                    if (preferences1.contains("storefaveimg_paxton1")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/PAXTON.jpg?alt=media&token=c6e70cb5-5f30-43e6-9826-afdf88d93e15");
+                    }
+
+                    if (preferences1.contains("storefaveimg_rosehip1")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/ROSEHIP.jpg?alt=media&token=932ba08d-7170-4aab-8b85-9476d0133dce");
+                    }
+                    if (preferences1.contains("storefaveimg_wagoneer1")) {
+                        if (preferences1.contains("status")) {
+                            editor.remove("status");
+                            editor.commit();
+                        }
+                        addSavedImg(container_faves, "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/GRAND%20WAGONEER.jpg?alt=media&token=ef743266-3978-4b84-b92c-ff392334842a");
+                    }
 
 
 
@@ -338,19 +490,11 @@ public class FaveActivity extends AppCompatActivity {
 
     public void addSavedImg(LinearLayout linearLayout, String url) {
         ImageView iv = new ImageView(this);
-        //linearLayout.setWeightSum(2);
-        //LinearLayout.LayoutParams lParams = (LinearLayout.LayoutParams) linearLayout.setLayoutParams(100, 100, );
-        //lParams.weight = 1;
-        //btn.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+
         iv.setMinimumHeight(LinearLayout.LayoutParams.MATCH_PARENT);
         iv.setForegroundGravity(View.TEXT_ALIGNMENT_CENTER);
         iv.setScaleType(ImageView.ScaleType.FIT_START);
         iv.setBackgroundColor(getColor(R.color.colorBlack));
-        //btn.setScaleType(ImageView.ScaleType.FIT_XY);
-        //btn.setMaxHeight(750);
-
-        //iv.setLayoutParams(new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT,0.5f));
-        //btn.setLayoutParams(lParams);
 
         Glide.with(this.getApplicationContext())
                 //.using(new FirebaseImageLoader())
@@ -358,23 +502,6 @@ public class FaveActivity extends AppCompatActivity {
                 .into(iv);
 
         linearLayout.addView(iv);
-    }
-
-    public void addSavedVid(LinearLayout linearLayout, final String url) {
-        ImageButton btn = new ImageButton(this);
-
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(intent);
-
-            }
-        });
-
-        linearLayout.addView(btn);
     }
 
     public void emptyMessage(LinearLayout linearLayout) {
@@ -389,6 +516,27 @@ public class FaveActivity extends AppCompatActivity {
         //linearLayout.canScrollHorizontally(1);
         linearLayout.addView(tv);
     }
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+        if (!b) {
+            youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
+
+            youTubePlayer.cueVideo(url_link);
+
+            mYoutubePlayer = youTubePlayer;
+        }
+
+    }
+
+    @Override
+    public void onInitializationFailure (YouTubePlayer.Provider
+                                                 provider, YouTubeInitializationResult youTubeInitializationResult){
+
+    }
+
+
 
 
 }

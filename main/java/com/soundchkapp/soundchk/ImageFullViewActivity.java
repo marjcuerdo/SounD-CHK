@@ -214,7 +214,21 @@ public class ImageFullViewActivity extends AppCompatActivity {
                         .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bug_Saplings%204.JPG?alt=media&token=f600cde0-b3f5-46b5-89e1-0795b0db28aa")
                         .into(fullImgView);
                 break;
-
+            case "paxton1":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/PAXTON.jpg?alt=media&token=c6e70cb5-5f30-43e6-9826-afdf88d93e15")
+                        .into(fullImgView);
+                break;
+            case "rosehip1":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/ROSEHIP.jpg?alt=media&token=932ba08d-7170-4aab-8b85-9476d0133dce")
+                        .into(fullImgView);
+                break;
+            case "wagoneer1":
+                Glide.with(this.getApplicationContext())
+                        .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/GRAND%20WAGONEER.jpg?alt=media&token=ef743266-3978-4b84-b92c-ff392334842a")
+                        .into(fullImgView);
+                break;
 
 
         }

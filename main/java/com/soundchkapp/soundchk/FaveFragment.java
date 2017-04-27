@@ -9,7 +9,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 /**
@@ -79,6 +78,17 @@ public class FaveFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
         }
+    }
+
+    /////
+
+    public static FaveFragment newInstance(int page, String title) {
+        FaveFragment fragmentThird = new FaveFragment();
+        Bundle args = new Bundle();
+        args.putInt("someInt", page);
+        args.putString("someTitle", title);
+        fragmentThird.setArguments(args);
+        return fragmentThird;
     }
 
 }

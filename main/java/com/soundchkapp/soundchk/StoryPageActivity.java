@@ -3,7 +3,6 @@ package com.soundchkapp.soundchk;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v4.content.ContextCompat;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -15,38 +14,20 @@ import android.widget.TextView;
 import android.widget.LinearLayout;
 import com.bumptech.glide.Glide;
 import com.google.android.youtube.player.YouTubePlayer;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.os.Handler;
-import java.util.ListIterator;
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Arrays;
 
-
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayerFragment;
-import com.google.android.youtube.player.YouTubePlayerSupportFragment;
-import com.google.android.youtube.player.YouTubePlayer.Provider;
+
 import com.google.android.youtube.player.YouTubePlayerView;
 
-
-import android.media.MediaPlayer;
-import android.widget.Toast;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.widget.ScrollView;
-import android.graphics.Point;
-import android.util.Log;
 
 
 import java.util.Objects;
@@ -58,19 +39,16 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
     private static final int RECOVERY_REQUEST = 1;
     private YouTubePlayerView youTubeView;
 
-    public boolean tracker = false;
-
     boolean artawake = false;
+    int little = 0;
 
     public String url_link = "STILL_LOCKED";
 
     YouTubePlayer mYoutubePlayer;
-    ImageButton button_change_vid_next, button_change_vid_prev;
+    ImageButton button_change_vid_next;
 
-    public String prev_link = "";
-    public String next_link = "";
+    public ArrayList<String> saved_vid_urls = new ArrayList<>();
 
-    //final MediaPlayer mp = MediaPlayer.create(this, R.raw.samplesound);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +60,6 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         TextView storyfree = (TextView) findViewById(R.id.story_free);
         TextView story_locked = (TextView) findViewById(R.id.story_locked);
         LinearLayout locked_holder = (LinearLayout) findViewById(R.id.locked_holder);
-        //LinearLayout locked_holder2 = (LinearLayout) findViewById(R.id.extra_locked_holder);
         final ImageButton iv1 = (ImageButton) findViewById(R.id.imglocked1);
         final ImageButton iv2 = (ImageButton) findViewById(R.id.imglocked2);
         final ImageButton iv3 = (ImageButton) findViewById(R.id.imglocked3);
@@ -95,15 +72,14 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         final ImageButton iv10 = (ImageButton) findViewById(R.id.imglocked10);
         final ImageButton iv11 = (ImageButton) findViewById(R.id.imglocked11);
         final ImageButton iv12 = (ImageButton) findViewById(R.id.imglocked12);
+        final LinearLayout vid_holder = (LinearLayout) findViewById(R.id.vid_holder);
         final ImageButton button_scroll_down = (ImageButton) findViewById(R.id.button_scroll_down);
+        final LinearLayout fave_button_holder = (LinearLayout) findViewById(R.id.fave_button_holder);
+        final ImageButton button_fave = (ImageButton) findViewById(R.id.button_fave);
         youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
 
-        //YouTubePlayerFragment youTubePlayerFragment = YouTubePlayerFragment.newInstance();
-        //youTubePlayerFragment.initialize(Config.YOUTUBE_API_KEY, this);
+
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
-
-
-
 
         final Button scan_button = (Button)findViewById(R.id.scan_btn);
 
@@ -111,20 +87,24 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
             @Override
             public void onClick(View v) {
+                scan_button.setBackgroundResource(R.drawable.roundedbutton_clicked);
+                scan_button.setTextColor(Color.WHITE);
+
                 Intent intent = new Intent(getBaseContext(), CameraActivity.class);
+                finish();
                 startActivity(intent);
             }
         });
 
-
         button_change_vid_next = (ImageButton)findViewById(R.id.button_change_vid_next);
-        button_change_vid_prev = (ImageButton)findViewById(R.id.button_change_vid_prev);
+
+        final SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        final SharedPreferences.Editor editor = preferences1.edit();
 
         button_change_vid_next.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-
 
                 final Handler handler = new Handler();
 
@@ -134,7 +114,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        //myButton.setBackgroundColor(Color.BLACK); //set the color to black
+
                         button_change_vid_next.setImageResource(R.drawable.black_right_arrow);
                         button_change_vid_next.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
                     }
@@ -144,14 +124,16 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     String [] url_list = {"hFYIqk0uPyQ", "j457IfKBlFg"};
                     if (artawake == false) {
                         url_link = url_list[1];
+
                         artawake = true;
                     } else {
                         url_link = url_list[0];
+
                         artawake = false;
                     }
                     youTubeView.initialize(Config.YOUTUBE_API_KEY, StoryPageActivity.this);
                 } else if (Objects.equals(getIntent().getStringExtra("video"), "bugjar")) {
-                    String [] url_list = {"QWbt_8YPGOQ", "j457IfKBlFg"};
+                    String [] url_list = {"QWbt_8YPGOQ", "3anzbMIUwcA"};
                     if (!artawake) {
                         url_link = url_list[1];
                         artawake = true;
@@ -160,13 +142,16 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                         artawake = false;
                     }
                 } else if (Objects.equals(getIntent().getStringExtra("video"), "little")) {
-                    String [] url_list = {"QWbt_8YPGOQ", "j457IfKBlFg"};
-                    if (!artawake) {
+                    String [] url_list = {"Jbd3MLbHgXs", "0jYboXw13II", "zCDkvJaqRT8"};
+                    if (little == 0) {
                         url_link = url_list[1];
-                        artawake = true;
-                    } else {
+                        little = 1;
+                    } else if (little == 1){
+                        url_link = url_list[2];
+                        little = 2;
+                    } else if (little == 2) {
                         url_link = url_list[0];
-                        artawake = false;
+                        little = 0;
                     }
                 } else { }
 
@@ -179,79 +164,96 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
         });
 
-        button_change_vid_prev.setOnClickListener(new View.OnClickListener() {
 
+
+        button_fave.setVisibility(View.GONE);
+        button_fave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                button_fave.setImageResource(R.drawable.ic_notifications_white);
+                button_fave.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
+
+                Toast t = Toast.makeText(getApplicationContext(), "Saved video to FAVORITES", Toast.LENGTH_SHORT);
+                t.setGravity(Gravity.CENTER, 0, 0);
+                t.show();
+
                 final Handler handler = new Handler();
-
-                button_change_vid_prev.setImageResource(R.drawable.left_arrow);
-                button_change_vid_prev.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
-
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //myButton.setBackgroundColor(Color.BLACK); //set the color to black
-                        button_change_vid_prev.setImageResource(R.drawable.black_left_arrow);
-                        button_change_vid_prev.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
+                        button_fave.setImageResource(R.drawable.ic_notifications_black);
+                        button_fave.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
                     }
-                }, 150);
-/*
-                if(mYoutubePlayer!=null){
-                    mYoutubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                    mYoutubePlayer.cueVideo(url_link);
-                }*/
-                if (Objects.equals(getIntent().getStringExtra("video"), "artawake")) {
-                    String [] url_list = {"hFYIqk0uPyQ", "j457IfKBlFg"};
-                    if (!artawake) {
-                        url_link = url_list[1];
-                        artawake = true;
-                    } else {
-                        url_link = url_list[1];
-                        artawake = false;
+                }, 500);
+
+                if (preferences1.contains(url_link)) {
+
+                } else {
+
+                    if (getIntent().getStringExtra("locked") != null) {
+                        switch (getIntent().getStringExtra("locked")) {
+                            case "griffs":
+                                editor.putString("storefavevid_griffs", url_link);
+                                editor.commit();
+                                break;
+                            case "little":
+                                if (preferences1.contains("storefavevid_little1")) {
+                                    editor.putString("storefavevid_little2", url_link);
+                                    editor.commit();
+                                } else if (preferences1.contains("storefavevid_little2")){
+                                    editor.putString("storefavevid_little3", url_link);
+                                    editor.commit();
+                                } else if (preferences1.contains("storefavevid_little3")){
+
+                                } else {
+                                    editor.putString("storefavevid_little1", url_link);
+                                    editor.commit();
+                                }
+                                break;
+                            case "juicy":
+                                editor.putString("storefavevid_juicy", url_link);
+                                editor.commit();
+                                break;
+                            case "artawake":
+                                if (preferences1.contains("storefavevid_artawake1")) {
+                                    editor.putString("storefavevid_artawake2", url_link);
+                                    editor.commit();
+                                } else if (preferences1.contains("storefavevid_artawake2")){
+
+                                } else {
+                                    editor.putString("storefavevid_artawake1", url_link);
+                                    editor.commit();
+                                }
+                                break;
+                            case "bugjar":
+                                if (preferences1.contains("storefavevid_bugjar1")) {
+                                    editor.putString("storefavevid_bugjar2", url_link);
+                                    editor.commit();
+                                } else if (preferences1.contains("storefavevid_bugjar2")){
+
+                                } else {
+                                    editor.putString("storefavevid_bugjar1", url_link);
+                                    editor.commit();
+                                }
+                                break;
+
+                        }
                     }
 
-                    youTubeView.initialize(Config.YOUTUBE_API_KEY, StoryPageActivity.this);
-                } else if (Objects.equals(getIntent().getStringExtra("video"), "bugjar")) {
-                    String [] url_list = {"QWbt_8YPGOQ", "j457IfKBlFg"};
-                    if (!artawake) {
-                        url_link = url_list[1];
-                        artawake = true;
-                    } else {
-                        url_link = url_list[1];
-                        artawake = false;
-                    }
-                } else { }
-
-                if(mYoutubePlayer!=null){
-                    mYoutubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
-                    mYoutubePlayer.cueVideo(url_link);
                 }
             }
-
-
         });
 
-
-        //////////
-
-
-        final SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        final SharedPreferences.Editor editor = preferences1.edit();
 
         String url1 = "";
         String url2 = "";
         String url3 = "";
-        String url4 = "";
 
         button_scroll_down.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
-                intent.putExtra("fullimg", "little1");
-                startActivity(intent);*/
-
-                button_scroll_down.setImageResource(R.drawable.down_arrow);
+                button_scroll_down.setImageResource(R.drawable.white_down_button1);
                 button_scroll_down.setBackgroundColor(getResources().getColor(R.color.color_home_dark));
 
                 final Handler handler = new Handler();
@@ -263,22 +265,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                         View targetView = findViewById(R.id.lockedtext);
                         scrollView.smoothScrollTo(0,targetView.getTop());
                         //myButton.setBackgroundColor(Color.BLACK); //set the color to black
-                        button_scroll_down.setImageResource(R.drawable.black_down_arrow);
+                        button_scroll_down.setImageResource(R.drawable.down_button1);
                         button_scroll_down.setBackgroundColor(getResources().getColor(R.color.colorWhiteBg));
                     }
                 }, 200);
-
-
-                //ScrollView scrollView = (ScrollView)findViewById(R.id.scroll_view);
-                //View targetView = findViewById(R.id.lockedtext);
-                //scrollView.smoothScrollTo(0,targetView.getTop());
-
-                //targetView.getParent().requestChildFocus(targetView,targetView);
             }
         });
-
-
-
 
         // unlocked with QR; same access as open from feed button
 
@@ -377,7 +369,10 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/1.jpg?alt=media&token=ca07e35d-4138-452b-989a-5dba30bf7638";
                     url3 = "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/head%20shot.png?alt=media&token=93d7f5f8-0cfe-4534-8dad-e32db1101266";
 
+                    button_fave.setVisibility(View.VISIBLE);
                     button_change_vid_next.setVisibility(View.GONE);
+
+                    youTubeView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
 
                     scan_button.setVisibility(View.GONE);
 
@@ -411,11 +406,6 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     iv11.setVisibility(View.GONE);
                     iv12.setVisibility(View.GONE);
 
-                    url4 = "https://drive.google.com/file/d/0B-xS4tngSiksakJWaS14cWRIS3c/view?usp=sharing";
-                    //setSaveVidListeners(iv4, "griffs1", url4, editor);
-                    //setSaveVidListeners(iv5, "griffs2", url4, editor);
-                    //setSaveVidListeners(iv6, "griffs3", url4, editor);
-
                     if (Objects.equals(getIntent().getStringExtra("video"), "griffs")) {
                         url_link = "Uv1sFdhYDDI";
                     }
@@ -428,6 +418,8 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
+
+                    button_fave.setVisibility(View.VISIBLE);
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
@@ -463,11 +455,16 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.little_long_text);
 
+                    if (Objects.equals(getIntent().getStringExtra("video"), "little")) {
+                        url_link = "Jbd3MLbHgXs";
+                    }
                     break;
 
                 // DONE!!!
                 case "juicy":
                     toastFaveReminder();
+
+                    button_fave.setVisibility(View.VISIBLE);
 
                     url1 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3728.jpg?alt=media&token=4bfae885-54cc-46e8-bffe-50784d0fa157";
                     url2 = "https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/_DSC3750.jpg?alt=media&token=6b971eb0-6a1b-4215-a8cd-507b4c227534";
@@ -475,6 +472,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     button_change_vid_next.setVisibility(View.GONE);
 
+                    youTubeView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 800));
 
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
@@ -512,11 +510,13 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
 
                     break;
 
+                // DONE!!!
                 case "paxton":
                     toastFaveReminder();
                     tv.setBackgroundResource(R.drawable.final_story_paxton);
                     tv.setText(R.string.del_paxton);
 
+                    fave_button_holder.setVisibility(View.GONE);
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
@@ -526,10 +526,44 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     tv.setBackgroundResource(R.drawable.final_story_paxton);
                     tv.setText(R.string.del_paxton);
 
+                    setSaveImgListeners(iv2, "paxton1", editor);
+
                     scan_button.setVisibility(View.GONE);
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.paxton_long_text);
 
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bandcamp_button.png?alt=media&token=6d3e2af1-119c-45bb-8555-7a575585f8de")
+                            .into(iv1);
+
+                    iv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://delpaxton.bandcamp.com/"));
+                            startActivity(intent);
+                        }
+                    });
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/PAXTON.jpg?alt=media&token=c6e70cb5-5f30-43e6-9826-afdf88d93e15")
+                            .into(iv2);
+
+                    youTubeView.setVisibility(View.GONE);
+                    button_change_vid_next.setVisibility(View.GONE);
+                    vid_holder.setVisibility(View.GONE);
+
+                    iv3.setVisibility(View.GONE);
+                    iv4.setVisibility(View.GONE);
+                    iv5.setVisibility(View.GONE);
+                    iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
 
                     break;
 
@@ -539,6 +573,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
+                    fave_button_holder.setVisibility(View.GONE);
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
 
                     tv.setBackgroundResource(R.drawable.final_story_rosehip);
@@ -548,71 +583,39 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.rosehip_long_text);
 
+                    setSaveImgListeners(iv2, "rosehip1", editor);
 
                     Glide.with(this.getApplicationContext())
                             //.using(new FirebaseImageLoader())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9")
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bandcamp_button.png?alt=media&token=6d3e2af1-119c-45bb-8555-7a575585f8de")
                             .into(iv1);
 
                     Glide.with(this.getApplicationContext())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9")
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/ROSEHIP.jpg?alt=media&token=932ba08d-7170-4aab-8b85-9476d0133dce")
                             .into(iv2);
-
-                    Glide.with(this.getApplicationContext())
-                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9")
-                            .into(iv3);
 
                     iv1.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
-                            intent.putExtra("fullimg", "lavaque1");
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://rosehip.bandcamp.com/"));
                             startActivity(intent);
                         }
                     });
 
-                    // when held down
-                    iv1.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View v) {
-                            Toast.makeText(getApplicationContext(), "Saved to favorites!", Toast.LENGTH_LONG).show();
-                            return false;
-                        }
-                    });
+                    youTubeView.setVisibility(View.GONE);
+                    button_change_vid_next.setVisibility(View.GONE);
+                    vid_holder.setVisibility(View.GONE);
 
-                    iv2.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
-                            intent.putExtra("fullimg", "lavaque1");
-                            startActivity(intent);
-                        }
-                    });
-
-                    iv2.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View v) {
-                            Toast.makeText(getApplicationContext(), "Saved to favorites!", Toast.LENGTH_LONG).show();
-                            return false;
-                        }
-                    });
-
-                    iv3.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            intent = new Intent(getBaseContext(), ImageFullViewActivity.class);
-                            intent.putExtra("fullimg", "lavaque1");
-                            startActivity(intent);
-                        }
-                    });
-
-                    iv3.setOnLongClickListener(new View.OnLongClickListener() {
-                        @Override
-                        public boolean onLongClick(View v) {
-                            Toast.makeText(getApplicationContext(), "Saved to favorites!", Toast.LENGTH_LONG).show();
-                            return false;
-                        }
-                    });
+                    iv3.setVisibility(View.GONE);
+                    iv4.setVisibility(View.GONE);
+                    iv5.setVisibility(View.GONE);
+                    iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
 
                     break;
 
@@ -623,7 +626,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
 
                     setUnlockedStoryPage(lockedtext, locked_holder, url1, iv1, url2, iv2, url3, iv3, story_locked);
-
+                    fave_button_holder.setVisibility(View.GONE);
                     tv.setBackgroundResource(R.drawable.final_story_wagoneer);
                     tv.setText(R.string.title_wagoneer);
 
@@ -631,11 +634,47 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                     story_locked.setVisibility(View.VISIBLE);
                     story_locked.setText(R.string.wagoneer_long_text);
 
+                    setSaveImgListeners(iv2, "wagoneer1", editor);
+
+                    Glide.with(this.getApplicationContext())
+                            //.using(new FirebaseImageLoader())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/bandcamp_button.png?alt=media&token=6d3e2af1-119c-45bb-8555-7a575585f8de")
+                            .into(iv1);
+
+                    Glide.with(this.getApplicationContext())
+                            .load("https://firebasestorage.googleapis.com/v0/b/soundchk-8e0b6.appspot.com/o/GRAND%20WAGONEER.jpg?alt=media&token=ef743266-3978-4b84-b92c-ff392334842a")
+                            .into(iv2);
+
+                    iv1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://grandwagoneer.bandcamp.com/"));
+                            startActivity(intent);
+                        }
+                    });
+
+                    youTubeView.setVisibility(View.GONE);
+                    button_change_vid_next.setVisibility(View.GONE);
+                    vid_holder.setVisibility(View.GONE);
+
+                    iv3.setVisibility(View.GONE);
+                    iv4.setVisibility(View.GONE);
+                    iv5.setVisibility(View.GONE);
+                    iv6.setVisibility(View.GONE);
+                    iv7.setVisibility(View.GONE);
+                    iv8.setVisibility(View.GONE);
+                    iv9.setVisibility(View.GONE);
+                    iv10.setVisibility(View.GONE);
+                    iv11.setVisibility(View.GONE);
+                    iv12.setVisibility(View.GONE);
+
+
                     break;
 
                 // DONE!!!
                 case "artawake":
                     toastFaveReminder();
+                    button_fave.setVisibility(View.VISIBLE);
 
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
@@ -710,6 +749,7 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 case "bugjar":
                     toastFaveReminder();
 
+                    button_fave.setVisibility(View.VISIBLE);
                     lockedtext.setText("***UNLOCKED CONTENT***");
                     lockedtext.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
                     locked_holder.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
@@ -848,8 +888,6 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
         unlockNotifyTxt.setText("***UNLOCKED CONTENT***");
         unlockNotifyTxt.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.color_home));
         holder1.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
-        //holder2.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.colorGrey));
-        //holder2.setVisibility(View.VISIBLE);
 
         Glide.with(this.getApplicationContext())
                 //.using(new FirebaseImageLoader())
@@ -865,10 +903,6 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
                 .into(iv3);
 
         storyTxt.setVisibility(View.VISIBLE);
-    }
-
-    public void setLockedText(TextView story_locked, int stringId) {
-        story_locked.setText(stringId);
     }
 
     public void setSaveImgListeners(ImageView iv, final String filename, final SharedPreferences.Editor editor) {
@@ -897,27 +931,16 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
     }
 
     public void setSaveVidListeners(ImageView iv, final String filename, final String url, final SharedPreferences.Editor editor) {
-        iv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-                startActivity(intent);
-
-            }
-        });
 
         // when button held down
-        iv.setOnLongClickListener(new View.OnLongClickListener() {
+        iv.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onLongClick(View v) {
-                Toast.makeText(getApplicationContext(), "Saved to FAVORITES", Toast.LENGTH_LONG).show();
+            public void onClick(View v) {
+                //Toast.makeText(getApplicationContext(), "Saved to FAVORITES", Toast.LENGTH_LONG).show();
 
                 editor.putString("storefavevid_" + filename, filename);
 
                 editor.commit();
-
-                return false;
             }
         });
     }
@@ -926,6 +949,11 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
     public void onResume() {
         super.onResume();
         youTubeView.initialize(Config.YOUTUBE_API_KEY, this);
+
+        Button button = (Button)findViewById(R.id.scan_btn);
+
+        button.setBackgroundResource(R.drawable.roundedbutton);
+        button.setTextColor(getResources().getColor(R.color.colorBlack));
     }
 
     @Override
@@ -935,27 +963,12 @@ public class StoryPageActivity extends YouTubeBaseActivity implements YouTubePla
             youTubePlayer.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
 
 
-            Log.d("TAG", url_link);
+            //Log.d("TAG", url_link);
             youTubePlayer.cueVideo(url_link);
             //Save reference of initialized player in class level attribute
             mYoutubePlayer = youTubePlayer;
         }
 
-    }
-
-    // create playlist for videos
-    public String displayVideos() {
-
-        if (getIntent().getStringExtra("locked") != null) {
-            switch (getIntent().getStringExtra("locked")) {
-                case "griffs":
-
-
-
-            }
-        }
-
-        return url_link;
     }
 
     @Override

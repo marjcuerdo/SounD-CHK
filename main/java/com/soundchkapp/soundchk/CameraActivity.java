@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
@@ -72,10 +70,7 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Dr. Griffs Story Page
                     case "http://sound-chk-01-griffs":
-                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/griffs_outline.png?alt=media&token=6fecdebe-e75c-4fbf-8a9a-0d577e693fad":
-                    //case "market://detailsintroVID":
 
-                        //getView().findViewById(buttonId).setBackground(getResources().getDrawable(drawableId));
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "griffs");
                         intent.putExtra("locked", "griffs");
@@ -92,7 +87,6 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Little Box Story Page
                     case "http://sound-chk-02-little":
-                        //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/little_box_full.PNG?alt=media&token=85a6529b-a605-42cd-acd9-19ab313e4583":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         Log.d("TAG", "little working");
                         intent.putExtra("unlocked", "little");
@@ -110,7 +104,6 @@ public class CameraActivity extends AppCompatActivity {
 
                     // QR code: Juicy Connotation Story Page
                     case "http://sound-chk-03-juicy":
-                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/juicy_full.jpg?alt=media&token=a2fd8e74-9974-4cb0-95d5-61438e35e25a":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "juicy");
                         intent.putExtra("locked", "juicy");
@@ -128,7 +121,6 @@ public class CameraActivity extends AppCompatActivity {
                     // FINISHED!
                     // QR code: Album Review: Del Paxton
                     case "http://sound-chk-04-paxton":
-                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/lavaque_full.jpg?alt=media&token=39196cd2-2e15-4ef6-a48a-057c0aeb49c9":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "paxton");
                         intent.putExtra("locked", "paxton");
@@ -145,7 +137,6 @@ public class CameraActivity extends AppCompatActivity {
                     // FINISHED!
                     // QR code: Album Review: Rosehip
                     case "http://sound-chk-06-rosehip":
-                    //case "https://firebasestorage.googleapis.com/v0/b/soundchk-98ed0.appspot.com/o/album_full.jpg?alt=media&token=f2e785e0-b285-45ea-9b9e-84659ea69b64":
                         intent = new Intent(getBaseContext(), StoryPageActivity.class);
                         intent.putExtra("unlocked", "rosehip");
                         intent.putExtra("locked", "rosehip");

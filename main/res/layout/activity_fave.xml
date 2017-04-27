@@ -10,9 +10,39 @@
         android:layout_height="wrap_content"
         android:textColor="@color/colorWhiteBg"
         android:gravity="center"
-        android:padding="10dp"
+        android:paddingTop="10dp"
         android:textStyle="bold"
         android:text="Saved Content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhiteBg"
+        android:gravity="center"
+        android:paddingTop="0dp"
+        android:paddingBottom="10dp"
+        android:textStyle="bold"
+        android:text="@string/scroll"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="9"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/vid_holder">
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="match_parent"
+            android:id="@+id/youtube_view" />
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/button_change_vid_next"
+            android:layout_gravity="center"
+            android:src="@drawable/black_right_arrow"
+            android:background="@color/colorWhiteBg"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
     <HorizontalScrollView
         android:layout_height="match_parent"
         android:layout_width="wrap_content"

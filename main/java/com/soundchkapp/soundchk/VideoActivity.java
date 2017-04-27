@@ -44,15 +44,7 @@ public class VideoActivity extends YouTubeBaseActivity implements YouTubePlayer.
             player.setFullscreen(true);
 
             player.cueVideo(url_link);
-/*
-            if (getIntent().getStringExtra("video") == "intro") {
-                Log.d("TAG", "call worked");
-                player.cueVideo("CQpAEGlRsVU");
 
-            } else {
-                //player.cueVideo("fhWaJi1Hsfo"); // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
-                //player.cueVideo("mhFGdEwden0");
-            }*/
         }
     }
 

@@ -170,4 +170,14 @@ public class FeedFragment extends Fragment implements View.OnClickListener {
         getView().findViewById(buttonId).setBackground(getResources().getDrawable(drawableId));
         getView().findViewById(buttonId).setAlpha((float)0.6);
     }
+
+    ///
+    public static FeedFragment newInstance(int page, String title) {
+        FeedFragment fragmentFirst = new FeedFragment();
+        Bundle args = new Bundle();
+        args.putInt("someInt", page);
+        args.putString("someTitle", title);
+        fragmentFirst.setArguments(args);
+        return fragmentFirst;
+    }
 }
